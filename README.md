@@ -1,88 +1,72 @@
 # Interaction Kernel
 
-**Interaction Kernel (IK)** est un protocole distribué d’interopérabilité pour systèmes autonomes. Il standardise les `Command`, `Query`, `Event`, receipts, profiles, garanties de livraison et références d’artefacts **sans transférer l’ownership métier**.
+Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems.
 
-> **Status:** `v1.1-draft-r2` — architecture révisée, source-backed. Les éléments `CURRENT`, `TARGET` et `IK PROPOSAL` sont distingués explicitement.
+**Status:** `v1.1-draft-r2` reference implementation.
 
-## Pourquoi IK ?
+The repository contains:
 
-Konnaxion, Orgo, Da’at et d’autres systèmes doivent collaborer sans fusionner leurs modèles internes. IK fournit une frontière commune pour :
+- normative JSON Schemas for IK records and artifact interchange;
+- versioned Profile descriptors and payload schemas;
+- Python and TypeScript runtimes;
+- RFC 8785 JCS + SHA-256 semantic request fingerprinting;
+- a reusable admission pipeline;
+- TCK/golden vectors shared across runtimes;
+- Konnaxion, Orgo, Da’at/Kristal and kOA-Linux reference adapters;
+- a pinned Kristal `v5.0.0-rc.1` dependency lock;
+- GitHub-native technical documentation.
 
-- exprimer une intention (`Command`), une lecture (`Query`) ou un fait (`Event`);
-- corréler et tracer des interactions sans partager les bases de données;
-- livrer de façon fiable avec idempotence, retry/redrive et receipts;
-- référencer des artefacts externes sans transporter leurs bytes;
-- versionner les use cases avec des Profiles;
-- intégrer Kristal **via Da’at**, sans faire de Kristal un middleware obligatoire.
+## Architecture
 
-## Architecture en une image
-
-```mermaid
-flowchart TB
-    KX[Konnaxion\nCivic / Governance] <-->|IK direct| ORGO[Orgo\nOperational / Work]
-
-    KX -->|ExportManifest / ArtifactRef| DAAT[Da'at\nIK participant + Kristal ACL]
-    ORGO -->|ExportManifest / ArtifactRef| DAAT
-    DAAT <-->|Kristal-native contracts| KR[Kristal v5\nKnowledge / Epistemic]
-
-    IK[Interaction Kernel\nCore + Reliable + Artifact Interchange]
-    IK -. contracts/runtime .-> KX
-    IK -. contracts/runtime .-> ORGO
-    IK -. contracts/runtime .-> DAAT
+```text
+Konnaxion  <----------- IK ----------->  Orgo
+    \                                   /
+     \                                 /
+      +---------- IK ---------->  Da'at
+                                      |
+                              Kristal-native contracts
+                                      |
+                                   Kristal
 ```
 
-**Règle centrale :** Konnaxion ↔ Orgo reste direct. Kristal est optionnel par Profile. Da’at est la frontière IK ↔ Kristal dans la baseline.
+Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. Da’at is the baseline IK participant in front of Kristal.
 
-## Documentation
+## Quick checks
 
-| Document | Contenu |
-|---|---|
-| [Documentation index](docs/README.md) | Navigation complète |
-| [Status & scope](docs/00-status-and-scope.md) | État de la spec, CURRENT/TARGET/IK PROPOSAL |
-| [Architecture](docs/01-architecture.md) | Plans, ownership, topologie |
-| [Core protocol](docs/02-core-protocol.md) | Command / Query / Event / Receipt / QueryResult |
-| [Envelope](docs/03-envelope.md) | Champs, sémantique et règles |
-| [Profiles & capabilities](docs/04-profiles-and-capabilities.md) | Extensibilité use-case |
-| [Artifact Interchange](docs/05-artifact-interchange.md) | ArtifactRef + ExportManifest |
-| [Reliability](docs/06-reliability.md) | Idempotence, retry, outbox/admission |
-| [Security](docs/07-security-authority-privacy.md) | Identity, trust, authority, privacy |
-| [Kristal & Da’at](docs/08-kristal-daat.md) | Gateway IK ↔ Kristal v5 |
-| [Bindings & deployment](docs/09-bindings-and-deployment.md) | HTTP, messaging, offline |
-| [Observability](docs/10-observability-and-audit.md) | Logs, metrics, traces, audit, provenance |
-| [Conformance](docs/11-conformance-tck.md) | Claims et TCK |
-| [Canonical flows](docs/12-canonical-flows.md) | Konnaxion↔Orgo et Kristal loops |
-| [Repository model](docs/13-repository-and-packages.md) | Structure cible des packages |
-| [Migration](docs/14-migration-plan.md) | Séquence D0→D7 |
-| [Versioning](docs/15-versioning-and-compatibility.md) | Versions, immutability, compatibility |
-| [Error model](docs/16-error-model.md) | Taxonomie et retry/reconciliation |
-| [Konnaxion upgrade](docs/upgrades/konnaxion.md) | Plan détaillé |
-| [Orgo upgrade](docs/upgrades/orgo.md) | Plan détaillé |
-| [Kristal/Da’at upgrade](docs/upgrades/kristal-daat.md) | v4→v5 et gateway |
-| [Open ADRs](docs/adrs/README.md) | Décisions requises avant spec-lock |
-| [Normative requirements](docs/reference/normative-requirements.md) | Catalogue MUST/SHOULD/MUST NOT |
-| [Glossary](docs/reference/glossary.md) | Terminologie |
-| [Source baseline](docs/reference/source-baseline.md) | Sources et précédence |
+### Python
 
-## Non-goals
+```bash
+cd runtime/python
+python -m unittest discover -s tests -v
+```
 
-IK n’est pas :
+### TypeScript
 
-- un workflow engine;
-- un ESB central obligatoire;
-- une base de données globale;
-- un artifact store;
-- un moteur de connaissance;
-- un système d’identité central;
-- un moteur universel de policy;
-- un remplaçant de Kristal, Konnaxion ou Orgo.
+```bash
+cd runtime/typescript
+npm run build
+npm test
+```
 
-## Spec-lock
+The TypeScript runtime intentionally has no runtime dependencies.
 
-La spec ne doit pas passer à `1.1` stable avant résolution des ADRs ouvertes :
+## Repository map
 
-1. owner de l’activation Runtime Pack sous kOA-Linux;
-2. pin exact de Kristal v5;
-3. objet canonique de handoff Konnaxion;
-4. fingerprint canonique IK-Reliable.
+```text
+contracts/      IK schemas, Profiles and payload schemas
+locks/          immutable downstream dependency locks
+runtime/        Python + TypeScript reference runtimes
+adapters/       Konnaxion / Orgo / Da’at / kOA-Linux reference adapters
+tck/            cross-language golden vectors
+scripts/        validation utilities
+docs/           technical documentation + ADRs
+```
 
-Voir [docs/adrs/README.md](docs/adrs/README.md).
+## Accepted architecture decisions
+
+- Runtime Pack: Konnaxion selects/requests; local platform activation is executed by the configured `RuntimePackActivationPort` owner (kOA-Linux when present).
+- Kristal pin: `v5.0.0-rc.1` at commit `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19`.
+- Konnaxion handoff: `DecisionRecord` is the canonical immutable handoff contract.
+- Request fingerprint: semantic projection → RFC 8785 JCS → SHA-256.
+
+See [`docs/`](docs/README.md).
