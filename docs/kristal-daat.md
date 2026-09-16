@@ -11,3 +11,31 @@ Pinned release:
 - schema-set digest `sha256:7a94a1e8a91d5c5267b73b7f1e98977faa548324bc937bb491cd08d49fdc8c92`
 
 Da’at applies explicit versioned mappings from Konnaxion/Orgo ExportManifests to Kristal-native inputs, invokes Kristal-native contracts, validates outputs, then emits IK Receipts/Events with Kristal-owned ArtifactRefs.
+
+## Authority boundary
+
+Konnaxion and Orgo do not write their mutable operational databases into Kristal and do not grant Da’at ownership of that state. They provide source-owned snapshots/revisions suitable for mapping.
+
+Da’at is an anti-corruption and compilation boundary:
+
+```text
+source operational DB
+       |
+       | source-owned snapshot / ExportManifest
+       v
+      Da'at
+       |
+       | versioned mapping
+       v
+Kristal-native artifact
+       |
+       | ArtifactRef
+       v
+source/local consumer projection
+```
+
+Kristal owns its native epistemic artifacts. A Runtime Pack or database-like query materialization derived from a Kristal artifact remains an artifact/materialization; it does not become the source application's operational system of record.
+
+IK does not require a distributed transaction between the source database, Da’at and Kristal. Cross-boundary completion is expressed through durable delivery, Receipts, Events, ArtifactRefs and reconciliation.
+
+See [ADR-IK-05](adrs/ADR-IK-05-operational-state-artifact-boundary.md).

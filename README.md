@@ -1,6 +1,6 @@
 # Interaction Kernel
 
-Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems.
+Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems. It is not an operational database, artifact store or distributed transaction coordinator.
 
 **Status:** `v1.1-draft-r2` reference implementation.
 
@@ -68,5 +68,6 @@ docs/           technical documentation + ADRs
 - Kristal pin: `v5.0.0-rc.1` at commit `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19`.
 - Konnaxion handoff: `DecisionRecord` is the canonical immutable handoff contract.
 - Request fingerprint: semantic projection → RFC 8785 JCS → SHA-256.
+- State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; Da’at maps source-owned snapshots into Kristal-native artifacts; no distributed cross-owner database transaction is required.
 
 See [`docs/`](docs/README.md).
