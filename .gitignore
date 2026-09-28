@@ -6,3 +6,4 @@ runtime/typescript/dist/
 .coverage
 .pytest_cache/
 .DS_Store
+/SmartSnap.pyw
