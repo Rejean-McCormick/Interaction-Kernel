@@ -7,3 +7,33 @@ runtime/typescript/dist/
 .pytest_cache/
 .DS_Store
 /SmartSnap.pyw
+
+# Additional local/editor/test artifacts
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.vscode/
+.idea/
+Thumbs.db
+
+# Local environments and transient files
+.env
+.env.*
+!.env.example
+!*.example
+*.log
+*.tmp
+*.swp
+*.orig
+
+# Backup naming variants
+*.bak
+*.bak_*
+*.bak-*
+*.backup
+*.backup-*
+*.backup_*
+
+# Local helper, not part of the product
+GitSink.bat

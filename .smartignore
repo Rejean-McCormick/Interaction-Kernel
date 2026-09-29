@@ -1,0 +1,5 @@
+# Interaction-Kernel snapshot-only exclusions.
+#
+# Intentionally minimal: locks/, tck/, REPO_MANIFEST.json and VALIDATION.md
+# are part of the repository's reproducibility/conformance surface and should
+# remain present in code snapshots.
