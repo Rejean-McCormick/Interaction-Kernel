@@ -1,5 +1,7 @@
-# ADR-IK-02 — Kristal release pin
+# ADR-IK-02 — Kristal Standard pin
 
-**Status:** Accepted
+**Status:** Accepted (v6 replacement)
 
-Pin Kristal Framework `5.0.0-rc.1`, tag `v5.0.0-rc.1`, commit `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19`, canonicalization profile `kristal.v5:jcs-rfc8785`, schema-set digest `sha256:7a94a1e8a91d5c5267b73b7f1e98977faa548324bc937bb491cd08d49fdc8c92`.
+Pin Kristal Standard `6.0.0` using `kristal.consumer-lock/v2`. The lock records canonicalization `kristal.v6:jcs-rfc8785`, the standard-manifest SHA-256 and the core `kristal-state` / Reader Policy schema digests.
+
+The previous Git-tag/commit-based v5 RC pin is retired because the v6 standard snapshot is identified directly by its published manifest and contract digests.

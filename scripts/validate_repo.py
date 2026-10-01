@@ -14,8 +14,10 @@ for path in sorted((ROOT/'contracts/profiles').glob('*/*/*/profile.json')):
         payload=path.parent/value['payload_schema']
         Draft202012Validator.check_schema(json.loads(payload.read_text(encoding='utf-8')))
     except Exception as e: errors.append(f'{path}: {e}')
-lock=json.loads((ROOT/'locks/kristal-v5.0.0-rc.1.lock.json').read_text())
-if lock.get('git_commit')!='af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19': errors.append('Kristal commit mismatch')
+lock=json.loads((ROOT/'locks/kristal-v6.0.0.lock.json').read_text())
+if lock.get('format')!='kristal.consumer-lock/v2': errors.append('Kristal lock format mismatch')
+if lock.get('version')!='6.0.0': errors.append('Kristal version mismatch')
+if lock.get('canonicalization_profile')!='kristal.v6:jcs-rfc8785': errors.append('Kristal canonicalization profile mismatch')
 if errors:
     print('\n'.join(errors)); sys.exit(1)
 print('repository contracts: PASS')

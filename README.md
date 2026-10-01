@@ -2,7 +2,7 @@
 
 Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems. It is not an operational database, artifact store or distributed transaction coordinator.
 
-**Status:** `v1.1-draft-r2` reference implementation.
+**Status:** `v2.0-draft` reference implementation.
 
 The repository contains:
 
@@ -13,7 +13,7 @@ The repository contains:
 - a reusable admission pipeline;
 - TCK/golden vectors shared across runtimes;
 - Konnaxion, Orgo, Da’at/Kristal and kOA-Linux reference adapters;
-- a pinned Kristal `v5.0.0-rc.1` dependency lock;
+- a pinned Kristal Standard `6.0.0` dependency lock;
 - GitHub-native technical documentation.
 
 ## Architecture
@@ -65,7 +65,7 @@ docs/           technical documentation + ADRs
 ## Accepted architecture decisions
 
 - Runtime Pack: Konnaxion selects/requests; local platform activation is executed by the configured `RuntimePackActivationPort` owner (kOA-Linux when present).
-- Kristal pin: `v5.0.0-rc.1` at commit `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19`.
+- Kristal pin: Standard `6.0.0`, canonicalization `kristal.v6:jcs-rfc8785`, pinned by manifest and core-contract digests.
 - Konnaxion handoff: `DecisionRecord` is the canonical immutable handoff contract.
 - Request fingerprint: semantic projection → RFC 8785 JCS → SHA-256.
 - State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; Da’at maps source-owned snapshots into Kristal-native artifacts; no distributed cross-owner database transaction is required.

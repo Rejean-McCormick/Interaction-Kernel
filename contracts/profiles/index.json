@@ -18,17 +18,17 @@
     },
     {
       "id": "kristal.build.request",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "class": "command"
     },
     {
       "id": "kristal.artifact.ready",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "class": "event"
     },
     {
       "id": "kristal.revision.request",
-      "version": "1.0.0",
+      "version": "2.0.0",
       "class": "command"
     },
     {

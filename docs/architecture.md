@@ -18,7 +18,7 @@ Konnaxion  <---------- IK ----------> Orgo
 |---|---|---|
 | civic/governance | Konnaxion | deliberation, DecisionRecord, impact/accountability |
 | operational/work | Orgo | Signal, Workflow, Case, Task, IntegrationOperation |
-| knowledge/epistemic | Kristal | Structured Epistemic State, Exchange, ValidationReport, AuthorityRecognition, Runtime Pack |
+| knowledge/state | Kristal | Kristal State, valuations/applicability/roles/actionability, validation/recognition references, derived runtime projections |
 | Kristal boundary | Da’at | IK admission, mapping profile, Kristal pin, handoff |
 | host activation | kOA-Linux when present | verify/stage/activate/rollback Runtime Pack |
 

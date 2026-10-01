@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.0-dev.0 — 2026-10-01
+
+- Migrated the Kristal integration baseline from v5 RC to Kristal Standard 6.0.0.
+- Added consumer lock v2 based on the standard manifest and core contract digests.
+- Bumped Kristal build/artifact/revision Profiles to 2.0.0.
+- Updated Da’at mapping admission to require the v6 contract set.
+- Migrated the shared JCS TCK to v6 canonical surfaces, including typed valuations and actionability.
+- Clarified that Kristal actionability never transfers operational execution authority.
+
+
 ## Unreleased — 2026-09-16
 
 - Clarified that IK is not an operational database, artifact store or distributed transaction coordinator.

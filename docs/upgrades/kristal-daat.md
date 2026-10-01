@@ -1,17 +1,14 @@
-# Kristal / Da’at upgrade
+# Kristal / Da’at v6 upgrade
 
-Do not add IK fields to Kristal core schemas.
+Da’at now targets the final Kristal Standard `6.0.0`. Do not add IK transport fields to Kristal core schemas.
 
-Upgrade Da’at/kOA integration from v4-centric assumptions to the pinned v5 release candidate. Replace global `no compile on fail` with stage-specific gates: Working Exchange compilation may precede final validation/recognition when the Profile permits; Reference/release/distribution remain fail-closed according to policy.
+Required mapping changes:
 
-Da’at is responsible for pin verification, versioned mapping profiles, native Kristal invocation, output validation and IK artifact handoff.
+- `structured_epistemic_state` → `kristal_state`;
+- `certainty_level` + `uncertainty` → typed `valuations[]`;
+- `qualifiers` → `coordinates`;
+- `scope` → `applicability`;
+- preserve `record_role` and `actionability` when source mappings can support them;
+- never infer `automatic` merely from a high valuation; actionability requires policy semantics distinct from measurement.
 
-Preserve the operational-state boundary during migration:
-
-- source applications keep mutable operational records in their own databases;
-- Da’at consumes source-owned snapshots/ExportManifests rather than writing source databases;
-- Kristal owns the resulting Kristal-native artifacts;
-- Runtime Packs or database-like query materializations are derived artifacts, not replacement operational systems of record;
-- completion crosses the boundary through Receipts, Events and ArtifactRefs rather than a distributed database transaction.
-
-See [ADR-IK-05](../adrs/ADR-IK-05-operational-state-artifact-boundary.md).
+Da’at remains responsible for pin verification, versioned mapping profiles, native Kristal invocation, output validation and IK artifact handoff. Source applications keep mutable operational records in their own databases. Kristal actionability can inform routing, but execution occurs only through an authorized owner boundary.

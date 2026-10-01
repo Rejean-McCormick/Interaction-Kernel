@@ -1,23 +1,30 @@
 # Validation report
 
-Validated on 2026-09-14 against the provided Konnaxion_Worlds, Orgo_Worlds and Kristal Framework v5.0.0-rc.1 snapshots.
+Validated on 2026-10-01 after migration of the Interaction Kernel / Da’at boundary to Kristal Standard `6.0.0`.
 
 ## Passing gates
 
-- repository JSON Schemas/Profile schemas: PASS;
-- Kristal consumer lock and schema-set digest: PASS;
-- Kristal RFC 8785 JCS vectors: 9/9 PASS in Python and TypeScript;
-- IK semantic fingerprint vectors: 3/3 PASS in Python and TypeScript;
-- Python admission/idempotency tests: PASS;
-- TypeScript admission/idempotency tests: PASS;
-- Konnaxion existing `validate_publish_request()` compatibility for `accountability.impact.publish`: PASS;
-- TypeScript Orgo reference adapter static typecheck: PASS;
-- Markdown relative links: PASS.
+- repository JSON Schemas/Profile schemas: **PASS**;
+- Kristal v6 consumer lock v2 + manifest/core-schema digests: **PASS**;
+- Kristal v6 / RFC 8785 JCS vectors: **9/9 PASS** in Python and TypeScript;
+- IK semantic fingerprint vectors: **3/3 PASS** in Python and TypeScript;
+- Python admission/fingerprint/JCS/validation suite: **8 tests PASS**;
+- TypeScript admission/idempotency suite: **PASS**;
+- TypeScript Orgo reference adapter static typecheck: **PASS**;
+- Markdown relative links: **PASS**.
 
-## Pinned upstream
+## Optional external gate
 
-Kristal Framework `5.0.0-rc.1` / tag `v5.0.0-rc.1` / commit `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19`.
+The Konnaxion legacy bridge compatibility test requires an external Konnaxion source tree at `/mnt/data/ik_build/src/konnaxion/...`. The standalone SmartSnap does not contain that tree, so `scripts/test_all.*` now reports an explicit **SKIP** when it is absent instead of failing the self-contained repository validation.
 
-## Not yet claimed
+## Kristal v6 pin
 
-This repository does not claim that the reference adapters have already been merged into the authoritative Konnaxion, Orgo, Da’at/kOA-Linux repositories. They are integration-ready boundaries validated against the supplied snapshots. Full product-level integration still requires applying those adapters in the authoritative repositories and running each product's native CI/database migration suites.
+- standard `6.0.0`;
+- canonicalization `kristal.v6:jcs-rfc8785`;
+- standard manifest `sha256:1cc531c918d8c97c0caca8ced7560e54f9c8a98c5527fc90e32cb569dbdbb9b9`;
+- Kristal State schema `sha256:47e5cd7fd3a801adfd230a7591a70a62ff89a39d42023d87fe99851bc32725c5`;
+- Reader Policy schema `sha256:e5b8f8741a1736e8a7ce1204cf0ce1e0345b1a7e4b2fa19b19980b9b66e34599`.
+
+## Authority invariant
+
+Kristal v6 `record_role` and `actionability` enrich artifact semantics only. `actionability.mode = automatic` does not authorize a cross-system mutation; execution remains subject to the receiving owner's explicit contract/Profile, identity/authority check, admission policy and owner-local state transition.

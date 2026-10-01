@@ -1,3 +1,3 @@
 # JCS vector provenance
 
-Copied from pinned Kristal Framework `v5.0.0-rc.1` / `af703bf02ee04a69a5f2ad6694fa8b8e56ae2b19` for cross-language conformance.
+RFC 8785 fixtures are retained from the previous cross-language suite. Kristal-specific fixtures were migrated to the final Kristal Standard `6.0.0` contract (`kristal.v6:jcs-rfc8785`) and regenerated locally.
