@@ -12,4 +12,6 @@ Implemented Profiles:
 - `kristal.revision.request/2.0.0`
 - `knowledge.distribution.request/1.0.0`
 
+The active profile registry selects the Kristal `2.0.0` build/artifact/revision surfaces. Kristal profile directories at `1.0.0` are retained only as legacy compatibility/history and must not be used to claim conformance with the active Kristal Standard `6.0.0` boundary.
+
 See [`contracts/profiles/`](../contracts/profiles/).

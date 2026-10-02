@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "3f993d17db7025e3cac2fff432ac14c3638c347bc16846d21c7a0b05a4fcf48e",
-      "bytes": 1939
+      "sha256": "291d7beb74160cc0c5041151019fe5c5fbd982efb007d06fe1d55af8911f7026",
+      "bytes": 2123
     },
     {
       "path": "CONTRIBUTING.md",
@@ -29,8 +29,8 @@
     },
     {
       "path": "README.md",
-      "sha256": "de65f22671ec6a33e470b12ecfffae64ff8752559e5229de2cc4fbb98ea58c87",
-      "bytes": 2669
+      "sha256": "b5bf3aaef57a9abeba1f85603e4f58a2944a1bf5e83cd782dbbfa6272fbfbc60",
+      "bytes": 2807
     },
     {
       "path": "VALIDATION.md",
@@ -234,8 +234,8 @@
     },
     {
       "path": "docs/adrs/README.md",
-      "sha256": "205479943ff081dfacad301c0712ce6f60863100d1d10651bbdd7728f771fe5c",
-      "bytes": 618
+      "sha256": "9c6207a882489bf433488417342c39e66ebe7fd44ce3c45664685905b4916a30",
+      "bytes": 639
     },
     {
       "path": "docs/architecture.md",
@@ -274,8 +274,8 @@
     },
     {
       "path": "docs/profiles.md",
-      "sha256": "0033b3850c303edd9f24a300beb292c0ec70b0372c07225be5d6d0908b4abc2a",
-      "bytes": 629
+      "sha256": "1297b12bc1af717f5dbb847ff5f3b46ef972e14a1fd1ec8bd0bd3bfbaee539ee",
+      "bytes": 902
     },
     {
       "path": "docs/reference/normative-requirements.md",

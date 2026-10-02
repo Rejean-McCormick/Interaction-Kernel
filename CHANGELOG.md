@@ -8,6 +8,8 @@
 - Updated Da’at mapping admission to require the v6 contract set.
 - Migrated the shared JCS TCK to v6 canonical surfaces, including typed valuations and actionability.
 - Clarified that Kristal actionability never transfers operational execution authority.
+- Corrected the Python quick-check environment and ADR index to reflect the active v6 pin.
+- Clarified that legacy Kristal 1.0.0 Profile directories are historical compatibility only.
 
 
 ## Unreleased — 2026-09-16

@@ -37,8 +37,10 @@ Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. Da’at is th
 
 ```bash
 cd runtime/python
-python -m unittest discover -s tests -v
+PYTHONPATH=src python -m unittest discover -s tests -v
 ```
+
+On PowerShell, use `$env:PYTHONPATH = "src"` before the test command, or run the repository-level `scripts/test_all.ps1`.
 
 ### TypeScript
 
