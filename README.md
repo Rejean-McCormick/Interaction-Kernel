@@ -2,7 +2,7 @@
 
 Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems. It is not an operational database, artifact store or distributed transaction coordinator.
 
-**Status:** `v2.0-draft` reference implementation.
+**Status:** `v2.0-draft` reference implementation (`2.0.0-dev.1`).
 
 The repository contains:
 
@@ -12,7 +12,7 @@ The repository contains:
 - RFC 8785 JCS + SHA-256 semantic request fingerprinting;
 - a reusable admission pipeline;
 - TCK/golden vectors shared across runtimes;
-- Konnaxion, Orgo, Da’at/Kristal and kOA-Linux reference adapters;
+- Konnaxion, Orgo, Da’at/Kristal, kOA-Linux and UCKK reference adapters;
 - a pinned Kristal Standard `6.0.0` dependency lock;
 - GitHub-native technical documentation.
 
@@ -22,14 +22,14 @@ The repository contains:
 Konnaxion  <----------- IK ----------->  Orgo
     \                                   /
      \                                 /
-      +---------- IK ---------->  Da'at
+      +---------- IK ---------->  Da'at ---------- IK ----------> UCKK
                                       |
                               Kristal-native contracts
                                       |
                                    Kristal
 ```
 
-Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. Da’at is the baseline IK participant in front of Kristal.
+Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. Da’at is the baseline IK participant in front of Kristal. UCKK publication is an optional participant integration: Da’at sends immutable Kristal publication references through IK, while the artifact bytes may remain owned by the kOA Mediatheque.
 
 ## Quick checks
 
@@ -58,7 +58,7 @@ The TypeScript runtime intentionally has no runtime dependencies.
 contracts/      IK schemas, Profiles and payload schemas
 locks/          immutable downstream dependency locks
 runtime/        Python + TypeScript reference runtimes
-adapters/       Konnaxion / Orgo / Da’at / kOA-Linux reference adapters
+adapters/       Konnaxion / Orgo / Da’at / kOA-Linux / UCKK reference adapters
 tck/            cross-language golden vectors
 scripts/        validation utilities
 docs/           technical documentation + ADRs
@@ -71,5 +71,6 @@ docs/           technical documentation + ADRs
 - Konnaxion handoff: `DecisionRecord` is the canonical immutable handoff contract.
 - Request fingerprint: semantic projection → RFC 8785 JCS → SHA-256.
 - State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; Da’at maps source-owned snapshots into Kristal-native artifacts; no distributed cross-owner database transaction is required.
+- Kristal → UCKK publication: UCKK-specific mapping is an IK adapter; canonical Kristal ownership remains upstream, and the kOA Mediatheque may continue to own immutable publication bundle bytes.
 
 See [`docs/`](docs/README.md).

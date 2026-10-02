@@ -35,6 +35,26 @@
       "id": "knowledge.distribution.request",
       "version": "1.0.0",
       "class": "command"
+    },
+    {
+      "id": "kristal.publication.request",
+      "version": "1.0.0",
+      "class": "command"
+    },
+    {
+      "id": "kristal.publication.available",
+      "version": "1.0.0",
+      "class": "event"
+    },
+    {
+      "id": "kristal.publication.revoke.request",
+      "version": "1.0.0",
+      "class": "command"
+    },
+    {
+      "id": "kristal.publication.revoked",
+      "version": "1.0.0",
+      "class": "event"
     }
   ]
 }

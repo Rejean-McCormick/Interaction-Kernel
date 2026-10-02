@@ -1,6 +1,6 @@
 # Validation report
 
-Validated on 2026-10-01 after migration of the Interaction Kernel / Da’at boundary to Kristal Standard `6.0.0`.
+Validated on 2026-10-02 after adding the Kristal → UCKK publication boundary to Interaction Kernel `2.0.0-dev.1`.
 
 ## Passing gates
 
@@ -8,14 +8,15 @@ Validated on 2026-10-01 after migration of the Interaction Kernel / Da’at boun
 - Kristal v6 consumer lock v2 + manifest/core-schema digests: **PASS**;
 - Kristal v6 / RFC 8785 JCS vectors: **9/9 PASS** in Python and TypeScript;
 - IK semantic fingerprint vectors: **3/3 PASS** in Python and TypeScript;
-- Python admission/fingerprint/JCS/validation suite: **8 tests PASS**;
+- Python admission/fingerprint/JCS/validation/UCKK adapter suite: **13 tests PASS**;
+- UCKK publication adapter: publish, replay, divergent replay rejection, ArtifactRef integrity requirement and revocation: **PASS**;
 - TypeScript admission/idempotency suite: **PASS**;
 - TypeScript Orgo reference adapter static typecheck: **PASS**;
 - Markdown relative links: **PASS**.
 
 ## Optional external gate
 
-The Konnaxion legacy bridge compatibility test requires an external Konnaxion source tree at `/mnt/data/ik_build/src/konnaxion/...`. The standalone SmartSnap does not contain that tree, so `scripts/test_all.*` now reports an explicit **SKIP** when it is absent instead of failing the self-contained repository validation.
+The Konnaxion legacy bridge compatibility test requires an external Konnaxion source tree at `/mnt/data/ik_build/src/konnaxion/...`. The standalone SmartSnap does not contain that tree, so `scripts/test_all.*` reports an explicit **SKIP** when it is absent instead of failing the self-contained repository validation.
 
 ## Kristal v6 pin
 
@@ -28,3 +29,5 @@ The Konnaxion legacy bridge compatibility test requires an external Konnaxion so
 ## Authority invariant
 
 Kristal v6 `record_role` and `actionability` enrich artifact semantics only. `actionability.mode = automatic` does not authorize a cross-system mutation; execution remains subject to the receiving owner's explicit contract/Profile, identity/authority check, admission policy and owner-local state transition.
+
+UCKK publication likewise creates only a participant-local projection. The canonical Kristal and the publication bundle remain owned upstream; a successful UCKK Receipt proves the UCKK-local operation, not a transfer of Kristal authority.

@@ -1,0 +1,36 @@
+{
+  "id": "kristal.publication.available",
+  "version": "1.0.0",
+  "class": "event",
+  "description": "UCKK announces that a requested Kristal publication is available and identifies the UCKK-local publication object.",
+  "source_systems": [
+    "uckk"
+  ],
+  "target_systems": [
+    "daat"
+  ],
+  "target_capability": "kristal-publication-observer",
+  "payload_schema": "payload.schema.json",
+  "authority": {
+    "required": false,
+    "accepted_kinds": []
+  },
+  "artifacts": {
+    "published_representation": {
+      "requirement": "optional",
+      "accepted_types": [
+        "uckk.kristal_publication"
+      ]
+    }
+  },
+  "delivery": {
+    "durability": "durable",
+    "idempotency": "optional",
+    "ordering": "subject"
+  },
+  "response": {
+    "acceptance_receipt": "optional",
+    "final_receipt": "forbidden",
+    "outcome_events": []
+  }
+}

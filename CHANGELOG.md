@@ -1,5 +1,14 @@
 # Changelog
 
+## 2.0.0-dev.1 — 2026-10-02
+
+- Added UCKK as an optional IK participant for Kristal publication projections.
+- Added `kristal.publication.request/1.0.0` and `kristal.publication.available/1.0.0`.
+- Added explicit Kristal publication revocation request/event Profiles.
+- Added the port-based `adapters/uckk/` reference adapter with replay/idempotency conflict handling.
+- Kept canonical Kristal and publication bundle ownership outside IK; kOA Mediatheque-owned ArtifactRefs are supported.
+- Added ADR-IK-06 and architecture documentation for the Kristal → UCKK boundary.
+
 ## 2.0.0-dev.0 — 2026-10-01
 
 - Migrated the Kristal integration baseline from v5 RC to Kristal Standard 6.0.0.

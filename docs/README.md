@@ -13,7 +13,9 @@
 11. [Upgrade Konnaxion](upgrades/konnaxion.md)
 12. [Upgrade Orgo](upgrades/orgo.md)
 13. [Upgrade Kristal/Da’at](upgrades/kristal-daat.md)
-14. [Accepted ADRs](adrs/README.md)
-15. [Normative requirements](reference/normative-requirements.md)
+14. [Kristal publication to UCKK](uckk-kristal-publication.md)
+15. [Accepted ADRs](adrs/README.md)
+16. [Normative requirements](reference/normative-requirements.md)
 
 The cross-system state/artifact boundary is normative: participant operational state remains participant-owned; IK carries commands, queries, events and artifact references; Kristal-native knowledge is reached through Da’at. See [ADR-IK-05](adrs/ADR-IK-05-operational-state-artifact-boundary.md).
+

@@ -42,3 +42,9 @@ Kristal owns its native knowledge artifacts. A Runtime Pack or database-like que
 IK does not require a distributed transaction between the source database, Da’at and Kristal. Cross-boundary completion is expressed through durable delivery, Receipts, Events, ArtifactRefs and reconciliation.
 
 See [ADR-IK-05](adrs/ADR-IK-05-operational-state-artifact-boundary.md).
+
+## UCKK publication boundary
+
+Da’at is also the IK-side orchestrator for publishing a Kristal release to UCKK. It does not need to own the publication bundle: the `ArtifactRef.owner` may remain `mediatheque-koa` (or another authoritative artifact owner), while Da’at supplies the admitted interaction, authority context and pinned Kristal semantics.
+
+The UCKK-specific mapping is implemented under `adapters/uckk/`; it is deliberately not a Kristal Framework dependency. Publication, supersession and revocation change only the UCKK projection lifecycle.

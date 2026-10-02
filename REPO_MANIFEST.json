@@ -1,6 +1,6 @@
 {
   "format": "interaction-kernel.repo-manifest/1",
-  "version": "2.0.0-dev.0",
+  "version": "2.0.0-dev.1",
   "entries": [
     {
       "path": ".github/workflows/ci.yml",
@@ -19,8 +19,8 @@
     },
     {
       "path": "CHANGELOG.md",
-      "sha256": "291d7beb74160cc0c5041151019fe5c5fbd982efb007d06fe1d55af8911f7026",
-      "bytes": 2123
+      "sha256": "2ca032dbc9935e858e302eff6f0b35d36491ea4da19c9be33ec88f31bebdf683",
+      "bytes": 2699
     },
     {
       "path": "CONTRIBUTING.md",
@@ -29,17 +29,22 @@
     },
     {
       "path": "README.md",
-      "sha256": "b5bf3aaef57a9abeba1f85603e4f58a2944a1bf5e83cd782dbbfa6272fbfbc60",
-      "bytes": 2807
+      "sha256": "e70cd1949d08a49a772d1b638b2e8fbcb0d8350509d7b436a4428a83633151fe",
+      "bytes": 3255
+    },
+    {
+      "path": "SNAPSHOT_INDEX.txt",
+      "sha256": "ae9d6cde3fe5826ae32ee8008c29179576025dad0ba454015b77849fd6b7636b",
+      "bytes": 5729
     },
     {
       "path": "VALIDATION.md",
-      "sha256": "9fc8268b26d94ca67bfa3e8ba2d907eaa9c7b0ac658306cee712b10935dddf94",
-      "bytes": 1713
+      "sha256": "89e23b696edb2768f6f13c8d008938f06c6d1370365fc53ba81606c1a309e52e",
+      "bytes": 2098
     },
     {
       "path": "VERSION",
-      "sha256": "dec6ffb40c53f0e3c0974057f5f62aeca9e1adeae349dea6c73f01429496cd44",
+      "sha256": "1b541bd7a31c77cf631e6f29e1cd8c879ba469f1f941183f65ef12d81590c39a",
       "bytes": 12
     },
     {
@@ -88,9 +93,19 @@
       "bytes": 1892
     },
     {
+      "path": "adapters/uckk/README.md",
+      "sha256": "f146a240b2010c62c808fa2094043a6960cebde6d52d0e889d949f97e52c695e",
+      "bytes": 1565
+    },
+    {
+      "path": "adapters/uckk/kristal_publication_adapter.py",
+      "sha256": "8428bc878144850384f52896ecae50c534aa9eaa0cb8d0fc39f969c2186a74f9",
+      "bytes": 8395
+    },
+    {
       "path": "contracts/capabilities/reference-capabilities.json",
-      "sha256": "bb4f72c2e23f4d73a1d65f36c8e2ad0ccddfef16633bd4e7b1ad715056709469",
-      "bytes": 616
+      "sha256": "d2f68618f50a96299c1b494ca7c2deae9e104a9430f919147d755428b7c40f0e",
+      "bytes": 848
     },
     {
       "path": "contracts/errors/error-catalog.json",
@@ -99,8 +114,8 @@
     },
     {
       "path": "contracts/profiles/index.json",
-      "sha256": "ec69e4f955d84867ed11d70df37cc89f781f4c09820bcf6b534d642044efbff5",
-      "bytes": 805
+      "sha256": "577dfccaca33d131c4feb0a87841a964e53a6af4660630995dcc640c561ea6ef",
+      "bytes": 1238
     },
     {
       "path": "contracts/profiles/konnaxion-orgo/accountability.impact.publish/1.0.0/payload.schema.json",
@@ -143,6 +158,16 @@
       "bytes": 993
     },
     {
+      "path": "contracts/profiles/kristal/kristal.artifact.ready/1.0.0/payload.schema.json",
+      "sha256": "2cafa8dd0b5de0048513a9366fffcdd7e23876be464cc3f957a866159fe4d7bb",
+      "bytes": 556
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.artifact.ready/1.0.0/profile.json",
+      "sha256": "e9d6255b3b4a62dcbc5727c0f870f423d869bcc98d0a9e25431439aca530507e",
+      "bytes": 721
+    },
+    {
       "path": "contracts/profiles/kristal/kristal.artifact.ready/2.0.0/payload.schema.json",
       "sha256": "6bfe4b7cdc22cbf87f03fccb674d0d659782d15407e91ef6e402ed368b56ecee",
       "bytes": 581
@@ -153,6 +178,16 @@
       "bytes": 724
     },
     {
+      "path": "contracts/profiles/kristal/kristal.build.request/1.0.0/payload.schema.json",
+      "sha256": "93d6f254e8b4c87333accddc5f460ba87bc6e7aba0c2f3c8ef0b192596b2c1a4",
+      "bytes": 679
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.build.request/1.0.0/profile.json",
+      "sha256": "9cabe2cc118bec98e82996fa0fded0c4b97e9c4794af9904215fd78acf8be8eb",
+      "bytes": 873
+    },
+    {
       "path": "contracts/profiles/kristal/kristal.build.request/2.0.0/payload.schema.json",
       "sha256": "b489fa0107abacc98c386b4dccd5269ef18217e27444873021ea90644f42704f",
       "bytes": 674
@@ -161,6 +196,56 @@
       "path": "contracts/profiles/kristal/kristal.build.request/2.0.0/profile.json",
       "sha256": "359b789cfe6f6d24d36e89fe7e43cb340d79b3d771bbc3cf01ab830cb558e9bf",
       "bytes": 876
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.available/1.0.0/payload.schema.json",
+      "sha256": "864eef192ccfbb67b7a2bd93601088041a0f2d5ded65ea5274b7db606d16e41d",
+      "bytes": 685
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.available/1.0.0/profile.json",
+      "sha256": "2c5594bc13123bfbde6ff834cd4240fe15663a569d7b74b8e2af634eb94a5abb",
+      "bytes": 854
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.request/1.0.0/payload.schema.json",
+      "sha256": "a8f5f8fd0262e0332a1159342f0081ff0407b30cc372f78280638e48800ea5c1",
+      "bytes": 880
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.request/1.0.0/profile.json",
+      "sha256": "7078f2a9bc120ac4b2440328148741980eeaff5657d3b3014274c353e6f79dfb",
+      "bytes": 991
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.revoke.request/1.0.0/payload.schema.json",
+      "sha256": "793e51bfd7d6ec0c92cb52d8c15038948dc449e89e4264f99e7f62c9ad5b0847",
+      "bytes": 601
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.revoke.request/1.0.0/profile.json",
+      "sha256": "9ef56afc631c7e140ea8196d3040d56435e9ce409531b3193d01541a4ca07c26",
+      "bytes": 820
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.revoked/1.0.0/payload.schema.json",
+      "sha256": "6710b746eab6025c9f0ce159c4a90229c21a0dc387b7a34204747931948b499d",
+      "bytes": 717
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.publication.revoked/1.0.0/profile.json",
+      "sha256": "c2e31ae81030072089ca685ca00fe82647650992a632181d6680da6cc04bfbe6",
+      "bytes": 690
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.revision.request/1.0.0/payload.schema.json",
+      "sha256": "cefcce39c2c0d99a7dc92682fa4bf7af1cc013938c5c2ea69f8061a0f73324e3",
+      "bytes": 493
+    },
+    {
+      "path": "contracts/profiles/kristal/kristal.revision.request/1.0.0/profile.json",
+      "sha256": "1cedcdccc325e5016f1a7fed758a4535962614c1b1423ff6d6af83bcfad5821c",
+      "bytes": 861
     },
     {
       "path": "contracts/profiles/kristal/kristal.revision.request/2.0.0/payload.schema.json",
@@ -204,8 +289,8 @@
     },
     {
       "path": "docs/README.md",
-      "sha256": "2eefb9f49a93f7860aeb7022045d466aa49a3525445896aed8d8cc4fac44656a",
-      "bytes": 952
+      "sha256": "8a8878156909153492ed242d67a28d6d725e25ebf011e45e3852f725b524c207",
+      "bytes": 1016
     },
     {
       "path": "docs/adrs/ADR-IK-01-runtime-pack-activation-owner.md",
@@ -233,14 +318,19 @@
       "bytes": 2179
     },
     {
+      "path": "docs/adrs/ADR-IK-06-kristal-uckk-publication-boundary.md",
+      "sha256": "42e13439998d7c26e990eefc1aa55bbc0fe8f490fc076482ae4eeb4b27ac8844",
+      "bytes": 1577
+    },
+    {
       "path": "docs/adrs/README.md",
-      "sha256": "9c6207a882489bf433488417342c39e66ebe7fd44ce3c45664685905b4916a30",
-      "bytes": 639
+      "sha256": "7e5b504579056a0adc8b9a2dc6d97e77c6044b28cc979968bb72d7e2473edef7",
+      "bytes": 743
     },
     {
       "path": "docs/architecture.md",
-      "sha256": "b203a14f1775da2aa4bb812a031c5f3f8a8030d488ac3eb0a54257f69a80955c",
-      "bytes": 2388
+      "sha256": "1936f9bcd0961d5f30e6af817d54bed0689e57ff46e5ea98aa0bf7ad2879f6eb",
+      "bytes": 3384
     },
     {
       "path": "docs/artifact-interchange.md",
@@ -264,8 +354,8 @@
     },
     {
       "path": "docs/kristal-daat.md",
-      "sha256": "7de95782e7f6b0cf7ff0ea130ae81096d8c77a3652680ebcf559ec8ca495f384",
-      "bytes": 2320
+      "sha256": "0dfb322c5fbc572b896d27463dc39847426175a37e922ce3f3832d0633bc4e26",
+      "bytes": 2880
     },
     {
       "path": "docs/migration.md",
@@ -274,13 +364,13 @@
     },
     {
       "path": "docs/profiles.md",
-      "sha256": "1297b12bc1af717f5dbb847ff5f3b46ef972e14a1fd1ec8bd0bd3bfbaee539ee",
-      "bytes": 902
+      "sha256": "921894558b88d64630ece7bf2eb4b185b5713d5b22c1644f42b5567c578d35a8",
+      "bytes": 1309
     },
     {
       "path": "docs/reference/normative-requirements.md",
-      "sha256": "5132e6e4d31b6ca6022abcc27553837f02c2399ae3728bffd231ff385ed60c09",
-      "bytes": 1542
+      "sha256": "48783bca4561a641352c9ffe4aaa8adf6dc9b60bbe5cdc936f36a56aac4fd90a",
+      "bytes": 2066
     },
     {
       "path": "docs/reliability.md",
@@ -291,6 +381,11 @@
       "path": "docs/security-authority.md",
       "sha256": "643a26670caae4197ca483248708d8fe68fa43accdb2c67ed4c6d5ee9b8b58dd",
       "bytes": 468
+    },
+    {
+      "path": "docs/uckk-kristal-publication.md",
+      "sha256": "ee46fefef94fdb4ad684925d23e9c56b2084bb89b9bf0adacef5dbb18d9147c6",
+      "bytes": 2083
     },
     {
       "path": "docs/upgrades/konnaxion.md",
@@ -306,6 +401,31 @@
       "path": "docs/upgrades/orgo.md",
       "sha256": "9ec2cd372423752d8c125ffe2a872720ce31b2efce96f7ffaaf870aa0b6855ba",
       "bytes": 1020
+    },
+    {
+      "path": "locks/kristal-v5.0.0-rc.1-upstream/VERSION",
+      "sha256": "8e12405d95c499225268ffa7ca2680478b7df1ad11421af40bcf2b43d435c4bd",
+      "bytes": 11
+    },
+    {
+      "path": "locks/kristal-v5.0.0-rc.1-upstream/contract-set.manifest.json",
+      "sha256": "47a8aba1a0bac41887b50efe7188de6bd6ca3012567294619d3385ba6b9a30d3",
+      "bytes": 1805
+    },
+    {
+      "path": "locks/kristal-v5.0.0-rc.1-upstream/kristal-release.json",
+      "sha256": "08da333849490bae17191462542470634f808ea1359ca531c8aa16e1a65ac58b",
+      "bytes": 440
+    },
+    {
+      "path": "locks/kristal-v5.0.0-rc.1-upstream/schema-set.manifest.json",
+      "sha256": "bd4783bcce44d24fbe18fdb5d79b57e5c3f783ff0cf9c300befab6d66b644ef1",
+      "bytes": 3319
+    },
+    {
+      "path": "locks/kristal-v5.0.0-rc.1.lock.json",
+      "sha256": "2e56c0b2e4aae825817220a8d8160cfe5838d755dfcac6fd605f2b047766910d",
+      "bytes": 312
     },
     {
       "path": "locks/kristal-v6.0.0-upstream/VERSION",
@@ -334,7 +454,7 @@
     },
     {
       "path": "runtime/python/pyproject.toml",
-      "sha256": "e174ce54668e74cf510a1942295483befafa9606e4c9c689c3adcccfd080619a",
+      "sha256": "a448e4e5cf7820958de1e9cb321305485e434ca3f7a590ecb0405b9bc024a5d0",
       "bytes": 312
     },
     {
@@ -403,13 +523,18 @@
       "bytes": 1121
     },
     {
+      "path": "runtime/python/tests/test_uckk_adapter.py",
+      "sha256": "5b8d9937e0a0b319b6419b7a05b69ed1eca2c5aefc3af37be66032fa2ebfea91",
+      "bytes": 5480
+    },
+    {
       "path": "runtime/python/tests/test_validation.py",
       "sha256": "b7f008ada7c9370fa92adf872d16cd94c01f65553262d04b415da2cda3a72f4c",
       "bytes": 1133
     },
     {
       "path": "runtime/typescript/package.json",
-      "sha256": "f5930df3f0f29d39c47803a0e1523a8debf8ad31d341f4c05510a9e8640dd68f",
+      "sha256": "58ecc0cdbc83e5058173057e9c4cf1de2ed4eadc047af05238db21ea86055e81",
       "bytes": 328
     },
     {

@@ -21,13 +21,22 @@
     {
       "system": "daat",
       "capabilities": [
-        "kristal-build"
+        "kristal-build",
+        "kristal-publication-orchestration",
+        "kristal-publication-observer"
       ]
     },
     {
       "system": "koa-linux",
       "capabilities": [
         "runtime-pack-activation"
+      ]
+    },
+    {
+      "system": "uckk",
+      "capabilities": [
+        "kristal-publication-ingest",
+        "kristal-publication-lifecycle"
       ]
     }
   ]

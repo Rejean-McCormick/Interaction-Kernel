@@ -1,0 +1,42 @@
+{
+  "id": "kristal.publication.request",
+  "version": "1.0.0",
+  "class": "command",
+  "description": "Request publication of one immutable Kristal publication bundle into UCKK without transferring canonical Kristal ownership.",
+  "source_systems": [
+    "daat"
+  ],
+  "target_systems": [
+    "uckk"
+  ],
+  "target_capability": "kristal-publication-ingest",
+  "payload_schema": "payload.schema.json",
+  "authority": {
+    "required": true,
+    "accepted_kinds": [
+      "knowledge-publication",
+      "release-distribution",
+      "governance-mandate"
+    ]
+  },
+  "artifacts": {
+    "publication_bundle": {
+      "requirement": "required",
+      "accepted_types": [
+        "kristal.publication_bundle"
+      ]
+    }
+  },
+  "delivery": {
+    "durability": "durable",
+    "idempotency": "required",
+    "ordering": "subject"
+  },
+  "response": {
+    "acceptance_receipt": "required",
+    "final_receipt": "required",
+    "outcome_events": [
+      "kristal.publication.available"
+    ]
+  }
+}

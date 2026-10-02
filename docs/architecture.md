@@ -5,7 +5,7 @@ IK is a distributed protocol, not a central server, database, artifact store or 
 ```text
 Konnaxion  <---------- IK ----------> Orgo
     \                                /
-     +----------- IK ----------> Da'at
+     +----------- IK ----------> Da'at ---------- IK ----------> UCKK
                                    |
                            Kristal-native contracts
                                    |
@@ -21,6 +21,8 @@ Konnaxion  <---------- IK ----------> Orgo
 | knowledge/state | Kristal | Kristal State, valuations/applicability/roles/actionability, validation/recognition references, derived runtime projections |
 | Kristal boundary | Da’at | IK admission, mapping profile, Kristal pin, handoff |
 | host activation | kOA-Linux when present | verify/stage/activate/rollback Runtime Pack |
+| Kristal publication projection | UCKK | UCKK-local published representation and lifecycle |
+| publication artifact bytes | source artifact owner (for example kOA Mediatheque) | immutable Kristal publication bundle |
 
 ## State and artifact flow
 
@@ -58,3 +60,28 @@ IK does not require or define a transaction spanning participant databases. A pa
 Invariants: unique authoritative owner, no cross-system DB writes, no distributed cross-owner commit requirement, Konnaxion↔Orgo direct by default, Kristal optional by Profile, delivery lifecycle separate from domain lifecycle, artifact reference separate from artifact ownership.
 
 See [ADR-IK-05](adrs/ADR-IK-05-operational-state-artifact-boundary.md).
+
+## Kristal publication to UCKK
+
+UCKK is an optional IK participant, not part of the Kristal canonical authority plane. The normal publication path is:
+
+```text
+kOA Mediatheque (artifact owner)
+        |
+        | immutable kristal.publication_bundle ArtifactRef
+        v
+      Da'at
+        |
+        | kristal.publication.request
+        v
+       IK
+        |
+        v
+  UCKK adapter / UCKK
+        |
+        | Receipt + kristal.publication.available
+        v
+      Da'at
+```
+
+Supersession creates a new UCKK publication linked to the earlier publication. Revocation changes the UCKK-local publication lifecycle but does not delete or mutate the canonical Kristal corpus. See [ADR-IK-06](adrs/ADR-IK-06-kristal-uckk-publication-boundary.md).

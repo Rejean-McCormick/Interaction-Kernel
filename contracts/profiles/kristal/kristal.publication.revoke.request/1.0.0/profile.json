@@ -1,0 +1,34 @@
+{
+  "id": "kristal.publication.revoke.request",
+  "version": "1.0.0",
+  "class": "command",
+  "description": "Request revocation of a previously published Kristal representation in UCKK while preserving historical provenance.",
+  "source_systems": [
+    "daat"
+  ],
+  "target_systems": [
+    "uckk"
+  ],
+  "target_capability": "kristal-publication-lifecycle",
+  "payload_schema": "payload.schema.json",
+  "authority": {
+    "required": true,
+    "accepted_kinds": [
+      "knowledge-publication",
+      "governance-mandate"
+    ]
+  },
+  "artifacts": {},
+  "delivery": {
+    "durability": "durable",
+    "idempotency": "required",
+    "ordering": "subject"
+  },
+  "response": {
+    "acceptance_receipt": "required",
+    "final_receipt": "required",
+    "outcome_events": [
+      "kristal.publication.revoked"
+    ]
+  }
+}

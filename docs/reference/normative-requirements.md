@@ -17,3 +17,7 @@
 - **IK-REL-005 MUST NOT** assume global ordering.
 - **IK-VERS-001 MUST** keep published Profile/schema versions immutable.
 - **IK-VERS-002 MUST** reject known incompatibility explicitly.
+- **IK-UCKK-001 MUST** treat UCKK publication as a projection; UCKK publication MUST NOT transfer canonical Kristal ownership.
+- **IK-UCKK-002 MUST** carry Kristal publication bundles by immutable ArtifactRef with SHA-256 integrity; IK MUST NOT become the publication artifact store.
+- **IK-UCKK-003 MUST** preserve supersession/revocation provenance rather than rewriting canonical Kristal history.
+- **IK-UCKK-004 MUST** route the reference Kristal publication flow through Da’at as the Kristal IK boundary participant.

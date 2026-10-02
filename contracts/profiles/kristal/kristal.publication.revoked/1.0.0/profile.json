@@ -1,0 +1,29 @@
+{
+  "id": "kristal.publication.revoked",
+  "version": "1.0.0",
+  "class": "event",
+  "description": "UCKK announces that a Kristal publication has been revoked while retaining its provenance record.",
+  "source_systems": [
+    "uckk"
+  ],
+  "target_systems": [
+    "daat"
+  ],
+  "target_capability": "kristal-publication-observer",
+  "payload_schema": "payload.schema.json",
+  "authority": {
+    "required": false,
+    "accepted_kinds": []
+  },
+  "artifacts": {},
+  "delivery": {
+    "durability": "durable",
+    "idempotency": "optional",
+    "ordering": "subject"
+  },
+  "response": {
+    "acceptance_receipt": "optional",
+    "final_receipt": "forbidden",
+    "outcome_events": []
+  }
+}

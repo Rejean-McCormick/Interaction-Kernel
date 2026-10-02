@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://interaction-kernel.dev/profiles/kristal.publication.request/1.0.0/payload.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "publication_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "kristal_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500
+    },
+    "kristal_version": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 200
+    },
+    "channel": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 120
+    },
+    "supersedes_publication_id": {
+      "type": ["string", "null"],
+      "maxLength": 500
+    },
+    "metadata": {
+      "type": "object"
+    }
+  },
+  "required": [
+    "publication_id",
+    "kristal_id",
+    "kristal_version",
+    "channel"
+  ]
+}
