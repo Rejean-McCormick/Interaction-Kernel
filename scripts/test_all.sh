@@ -4,6 +4,7 @@ ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 cd "$ROOT"
 PYTHONPATH=runtime/python/src python scripts/validate_repo.py
 PYTHONPATH=runtime/python/src python scripts/verify_kristal_lock.py
+python scripts/verify_kristal_v7_baseline.py
 if [[ -f /mnt/data/ik_build/src/konnaxion/backend/konnaxion/ethikos/orgo_bridge_contract.py ]]; then
   python scripts/test_konnaxion_legacy_compat.py
 else

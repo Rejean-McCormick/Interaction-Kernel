@@ -2,7 +2,7 @@
   "id": "kristal.artifact.ready",
   "version": "1.0.0",
   "class": "event",
-  "description": "Da’at announces one or more verified Kristal artifacts are available.",
+  "description": "DaaT announces one or more verified Kristal artifacts are available.",
   "source_systems": [
     "daat"
   ],

@@ -4,6 +4,7 @@ Set-Location $Root
 $env:PYTHONPATH = "runtime/python/src"
 python scripts/validate_repo.py
 python scripts/verify_kristal_lock.py
+python scripts/verify_kristal_v7_baseline.py
 if (Test-Path '/mnt/data/ik_build/src/konnaxion/backend/konnaxion/ethikos/orgo_bridge_contract.py') {
   python scripts/test_konnaxion_legacy_compat.py
 } else {

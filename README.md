@@ -2,7 +2,7 @@
 
 Interaction Kernel (IK) is a distributed interoperability protocol and reference implementation for autonomous systems. It is not an operational database, artifact store or distributed transaction coordinator.
 
-**Status:** `v2.0-draft` reference implementation (`2.0.0-dev.1`).
+**Status:** `v2.0-draft` reference implementation (`2.0.0-dev.2`).
 
 The repository contains:
 
@@ -12,8 +12,8 @@ The repository contains:
 - RFC 8785 JCS + SHA-256 semantic request fingerprinting;
 - a reusable admission pipeline;
 - TCK/golden vectors shared across runtimes;
-- Konnaxion, Orgo, Da’at/Kristal, kOA-Linux and UCKK reference adapters;
-- a pinned Kristal Standard `6.0.0` dependency lock;
+- Konnaxion, Orgo, DaaT/Kristal, kOA-Linux and UCKK reference adapters;
+- a pinned Kristal portable `6.0.0` dependency lock plus a pinned Kristal `7.0.0-draft.3.1` design baseline;
 - GitHub-native technical documentation.
 
 ## Architecture
@@ -22,14 +22,14 @@ The repository contains:
 Konnaxion  <----------- IK ----------->  Orgo
     \                                   /
      \                                 /
-      +---------- IK ---------->  Da'at ---------- IK ----------> UCKK
+      +---------- IK ---------->  DaaT ---------- IK ----------> UCKK
                                       |
-                              Kristal-native contracts
+                         portable v6 contract / v7 baseline
                                       |
-                                   Kristal
+                              Kristal / Kristall
 ```
 
-Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. Da’at is the baseline IK participant in front of Kristal. UCKK publication is an optional participant integration: Da’at sends immutable Kristal publication references through IK, while the artifact bytes may remain owned by the kOA Mediatheque.
+Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. DaaT is the narrow IK anti-corruption/admission boundary in front of Kristal/Kristall; the stable machine identifier is `daat`. DaaT performs explicit contract mapping, not source acquisition, general corpus normalization, artifact storage, or Kristall semantic-identity authoring. UCKK publication is an optional participant integration: DaaT sends immutable Kristal publication references through IK, while the artifact bytes may remain owned by the kOA Mediatheque.
 
 ## Quick checks
 
@@ -58,7 +58,7 @@ The TypeScript runtime intentionally has no runtime dependencies.
 contracts/      IK schemas, Profiles and payload schemas
 locks/          immutable downstream dependency locks
 runtime/        Python + TypeScript reference runtimes
-adapters/       Konnaxion / Orgo / Da’at / kOA-Linux / UCKK reference adapters
+adapters/       Konnaxion / Orgo / DaaT / kOA-Linux / UCKK reference adapters
 tck/            cross-language golden vectors
 scripts/        validation utilities
 docs/           technical documentation + ADRs
@@ -67,10 +67,10 @@ docs/           technical documentation + ADRs
 ## Accepted architecture decisions
 
 - Runtime Pack: Konnaxion selects/requests; local platform activation is executed by the configured `RuntimePackActivationPort` owner (kOA-Linux when present).
-- Kristal pin: Standard `6.0.0`, canonicalization `kristal.v6:jcs-rfc8785`, pinned by manifest and core-contract digests.
+- Kristal compatibility: portable artifacts remain pinned to Standard `6.0.0` and canonicalization `kristal.v6:jcs-rfc8785`; the current additive Kristal/Kristall design baseline is pinned separately at `7.0.0-draft.3.1`.
 - Konnaxion handoff: `DecisionRecord` is the canonical immutable handoff contract.
 - Request fingerprint: semantic projection → RFC 8785 JCS → SHA-256.
-- State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; Da’at maps source-owned snapshots into Kristal-native artifacts; no distributed cross-owner database transaction is required.
+- State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; DaaT performs explicit versioned contract mapping into Kristal-native interfaces; no distributed cross-owner database transaction is required. DaaT does not own acquisition, corpus normalization, or Kristall semantic identity.
 - Kristal → UCKK publication: UCKK-specific mapping is an IK adapter; canonical Kristal ownership remains upstream, and the kOA Mediatheque may continue to own immutable publication bundle bytes.
 
 See [`docs/`](docs/README.md).

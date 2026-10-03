@@ -8,14 +8,14 @@ UCKK publication is an optional Interaction Kernel flow. The canonical Kristal r
 |---|---|
 | Kristal | canonical knowledge artifact/release semantics |
 | kOA Mediatheque | may own immutable publication bundle bytes and SHA-256 |
-| Da'at | IK admission/orchestration at the Kristal boundary |
+| DaaT | IK admission/orchestration at the Kristal boundary |
 | IK | command/event/reference transport and reliability semantics |
 | UCKK adapter | maps IK publication lifecycle into the UCKK participant API |
 | UCKK | owns the UCKK-local publication object |
 
 ## Publish
 
-Da'at sends `kristal.publication.request/1.0.0` to `uckk`. The envelope must include exactly one `ArtifactRef` whose `artifact_type` is `kristal.publication_bundle`. The reference must carry SHA-256 integrity and an opaque locator. The `ArtifactRef.owner.system` may be `mediatheque-koa`; transport through Da'at does not transfer artifact ownership.
+DaaT sends `kristal.publication.request/1.0.0` to `uckk`. The envelope must include exactly one `ArtifactRef` whose `artifact_type` is `kristal.publication_bundle`. The reference must carry SHA-256 integrity and an opaque locator. The `ArtifactRef.owner.system` may be `mediatheque-koa`; transport through DaaT does not transfer artifact ownership.
 
 `supersedes_publication_id` creates a replacement relationship. The old publication remains historical/provenance state.
 
@@ -23,7 +23,7 @@ A successful UCKK implementation returns a final Receipt containing `publication
 
 ## Revoke
 
-Da'at sends `kristal.publication.revoke.request/1.0.0`. UCKK revokes its local projection and preserves the historical mapping. A replacement may be named with `replacement_publication_id`. UCKK may emit `kristal.publication.revoked/1.0.0`.
+DaaT sends `kristal.publication.revoke.request/1.0.0`. UCKK revokes its local projection and preserves the historical mapping. A replacement may be named with `replacement_publication_id`. UCKK may emit `kristal.publication.revoked/1.0.0`.
 
 Revocation never deletes or rewrites the canonical Kristal corpus or source media.
 

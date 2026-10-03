@@ -1,0 +1,18 @@
+{
+  "format": "interaction-kernel.kristal-baseline-lock/v1",
+  "version": "7.0.0-draft.3.1",
+  "status": "draft",
+  "portable_contract": {
+    "artifact_type": "kristal_state",
+    "schema_version": "6.0",
+    "canonicalization_profile": "kristal.v6:jcs-rfc8785"
+  },
+  "contract_digests": {
+    "contracts/release.json": "sha256:ab34bc000a15b6b87c811b77831a120f0ed5bc1d8a7bf948daa18fa6c6b48b09",
+    "contracts/contract-set.json": "sha256:abfebfafb039819b8fcbb8981e12f5609c825173c5c8e42bd0b800f12a36c0b4",
+    "spec/v7/01-core-spec/kristal-v7-core-spec.md": "sha256:36f3ea743cc9a44d88981198714bc29a028898eacf4b83431d37f8c44e92b9ed",
+    "spec/v7/01-core-spec/compatibility-contract.md": "sha256:db8af6b7d9da4797ea39df207aa5307cce305d07e01d8601b665283c6a0e2d39",
+    "schemas/v7/kristal-v7-extension.schema.json": "sha256:fb8f008e9319d922edee4bc7fb93280f46880dd5619f6684810dc8da58cc4987",
+    "schemas/v7/kristall-source-registry.schema.json": "sha256:dc0d09a7797a533c01b75b451ad45d045b6f27da2f7a94896c2733227165d18a"
+  }
+}

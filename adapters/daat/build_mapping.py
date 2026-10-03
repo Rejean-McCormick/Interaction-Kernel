@@ -12,7 +12,7 @@ class KristalNativeClient(Protocol):
 
 def execute_build(envelope: Mapping[str, Any], manifest: Mapping[str, Any], mapping: MappingProfile, kristal: KristalNativeClient) -> list[Mapping[str, Any]]:
     if envelope['profile'] != {'id':'kristal.build.request','version':'2.0.0'}: raise ValueError('unsupported profile')
-    if envelope['target']['system'] != 'daat': raise ValueError('Da’at must be the IK receiver')
+    if envelope['target']['system'] != 'daat': raise ValueError('DaaT (system id: daat) must be the IK receiver')
     if envelope['data']['mapping_profile'] != f'{mapping.id}/{mapping.version}': raise ValueError('mapping profile mismatch')
     if envelope['data'].get('kristal_contract_set') != '6.0.0': raise ValueError('Kristal v6 contract set required')
     structured_input = mapping.map_export(manifest)

@@ -1,27 +1,21 @@
 SmartSnap snapshot file index
-Files included: 129
+Files included: 139
 
 .github/workflows/ci.yml
 .gitignore
 .smartignore
-CHANGELOG.md
-CONTRIBUTING.md
-README.md
-REPO_MANIFEST.json
-SNAPSHOT_INDEX.txt
-VALIDATION.md
-VERSION
-adapters/daat/README.md
 adapters/daat/build_mapping.py
 adapters/daat/kristal.lock.json
 adapters/daat/kristal_lock.py
+adapters/daat/README.md
 adapters/koa-linux/runtime_pack_activation.py
-adapters/konnaxion-python/README.md
 adapters/konnaxion-python/konnaxion_ik_adapter.py
-adapters/orgo-typescript/README.md
+adapters/konnaxion-python/README.md
 adapters/orgo-typescript/orgo-ik-adapter.ts
-adapters/uckk/README.md
+adapters/orgo-typescript/README.md
 adapters/uckk/kristal_publication_adapter.py
+adapters/uckk/README.md
+CHANGELOG.md
 contracts/capabilities/reference-capabilities.json
 contracts/errors/error-catalog.json
 contracts/profiles/index.json
@@ -59,13 +53,14 @@ contracts/schemas/export-manifest.schema.json
 contracts/schemas/profile.schema.json
 contracts/schemas/query-result.schema.json
 contracts/schemas/receipt.schema.json
-docs/README.md
+CONTRIBUTING.md
 docs/adrs/ADR-IK-01-runtime-pack-activation-owner.md
 docs/adrs/ADR-IK-02-kristal-pin.md
 docs/adrs/ADR-IK-03-decision-record.md
 docs/adrs/ADR-IK-04-fingerprint.md
 docs/adrs/ADR-IK-05-operational-state-artifact-boundary.md
 docs/adrs/ADR-IK-06-kristal-uckk-publication-boundary.md
+docs/adrs/ADR-IK-07-daat-kristal-v7-boundary.md
 docs/adrs/README.md
 docs/architecture.md
 docs/artifact-interchange.md
@@ -75,6 +70,7 @@ docs/envelope.md
 docs/kristal-daat.md
 docs/migration.md
 docs/profiles.md
+docs/README.md
 docs/reference/normative-requirements.md
 docs/reliability.md
 docs/security-authority.md
@@ -82,16 +78,26 @@ docs/uckk-kristal-publication.md
 docs/upgrades/konnaxion.md
 docs/upgrades/kristal-daat.md
 docs/upgrades/orgo.md
-locks/kristal-v5.0.0-rc.1-upstream/VERSION
 locks/kristal-v5.0.0-rc.1-upstream/contract-set.manifest.json
 locks/kristal-v5.0.0-rc.1-upstream/kristal-release.json
 locks/kristal-v5.0.0-rc.1-upstream/schema-set.manifest.json
+locks/kristal-v5.0.0-rc.1-upstream/VERSION
 locks/kristal-v5.0.0-rc.1.lock.json
-locks/kristal-v6.0.0-upstream/VERSION
 locks/kristal-v6.0.0-upstream/manifest.sha256.json
 locks/kristal-v6.0.0-upstream/schemas/kristal-state.schema.json
 locks/kristal-v6.0.0-upstream/schemas/reader-policy.schema.json
+locks/kristal-v6.0.0-upstream/VERSION
 locks/kristal-v6.0.0.lock.json
+locks/kristal-v7.0.0-draft.3.1-upstream/contracts/contract-set.json
+locks/kristal-v7.0.0-draft.3.1-upstream/contracts/release.json
+locks/kristal-v7.0.0-draft.3.1-upstream/schemas/v7/kristal-v7-extension.schema.json
+locks/kristal-v7.0.0-draft.3.1-upstream/schemas/v7/kristall-source-registry.schema.json
+locks/kristal-v7.0.0-draft.3.1-upstream/spec/v7/01-core-spec/compatibility-contract.md
+locks/kristal-v7.0.0-draft.3.1-upstream/spec/v7/01-core-spec/kristal-v7-core-spec.md
+locks/kristal-v7.0.0-draft.3.1-upstream/VERSION
+locks/kristal-v7.0.0-draft.3.1.lock.json
+README.md
+REPO_MANIFEST.json
 runtime/python/pyproject.toml
 runtime/python/src/interaction_kernel/__init__.py
 runtime/python/src/interaction_kernel/admission.py
@@ -124,11 +130,15 @@ scripts/test_all.sh
 scripts/test_konnaxion_legacy_compat.py
 scripts/validate_repo.py
 scripts/verify_kristal_lock.py
+scripts/verify_kristal_v7_baseline.py
+SNAPSHOT_INDEX.txt
 tck/fingerprint/cases.unresolved.json
 tck/fingerprint/vectors.json
+tck/jcs/expected-hashes.txt
 tck/jcs/README.md
 tck/jcs/SOURCE.md
-tck/jcs/expected-hashes.txt
 tck/jcs/vectors.json
+VALIDATION.md
+VERSION
 
 Index file: SNAPSHOT_INDEX.txt

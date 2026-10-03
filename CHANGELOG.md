@@ -1,5 +1,15 @@
 # Changelog
 
+## 2.0.0-dev.2 — 2026-10-03
+
+- Normalized the human-facing participant name to **DaaT** while preserving the machine identifier `daat`.
+- Narrowed DaaT to the IK↔Kristal anti-corruption/admission and explicit contract-mapping boundary.
+- Explicitly excluded source acquisition, artifact storage, general corpus normalization and Kristall semantic-identity authority from DaaT.
+- Retained Kristal `6.0.0` as the active portable `kristal_state` contract.
+- Added a content-digest pin for the additive Kristal/Kristall `7.0.0-draft.3.1` design baseline.
+- Added ADR-IK-07 and normative requirements preventing silent reinterpretation of v6 Profiles as v7 meta-artifact contracts.
+- No existing IK wire identifier was renamed; `daat` routes remain stable.
+
 ## 2.0.0-dev.1 — 2026-10-02
 
 - Added UCKK as an optional IK participant for Kristal publication projections.
@@ -14,7 +24,7 @@
 - Migrated the Kristal integration baseline from v5 RC to Kristal Standard 6.0.0.
 - Added consumer lock v2 based on the standard manifest and core contract digests.
 - Bumped Kristal build/artifact/revision Profiles to 2.0.0.
-- Updated Da’at mapping admission to require the v6 contract set.
+- Updated DaaT mapping admission to require the v6 contract set.
 - Migrated the shared JCS TCK to v6 canonical surfaces, including typed valuations and actionability.
 - Clarified that Kristal actionability never transfers operational execution authority.
 - Corrected the Python quick-check environment and ADR index to reflect the active v6 pin.
@@ -27,7 +37,7 @@
 - Added ADR-IK-05 for the operational-state / knowledge-artifact ownership boundary.
 - Made local-commit-before-Event and durable cross-owner reconciliation explicit.
 - Clarified ExportManifest/ArtifactRef source ownership and non-transfer of authority.
-- Clarified Da’at as the mapping/anti-corruption boundary from source-owned snapshots to Kristal-native artifacts.
+- Clarified DaaT as the mapping/anti-corruption boundary from source-owned snapshots to Kristal-native artifacts.
 - Clarified that Runtime Packs and database-like query materializations do not become authoritative operational state by virtue of local storage or activation.
 - No JSON Schema or Profile wire-contract changes.
 
@@ -35,11 +45,11 @@
 
 - Initial executable Interaction Kernel reference implementation.
 - Core Envelope, Receipt, QueryResult, ArtifactRef and ExportManifest schemas.
-- Seven initial Profiles for Konnaxion/Orgo/Da’at/Kristal integration.
+- Seven initial Profiles for Konnaxion/Orgo/DaaT/Kristal integration.
 - Python and TypeScript RFC 8785 JCS + SHA-256 request fingerprint runtimes.
 - Shared TCK using the nine pinned Kristal v5.0.0-rc.1 JCS vectors.
 - Admission/idempotency replay-conflict reference pipelines.
 - Konnaxion legacy bridge compatibility adapter and test.
 - Orgo IntegrationOperation/Signal mapping reference adapter.
-- Da’at pinned Kristal consumer lock and verification.
+- DaaT pinned Kristal consumer lock and verification.
 - kOA-Linux RuntimePackActivationPort reference boundary.

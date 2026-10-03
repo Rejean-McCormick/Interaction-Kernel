@@ -6,7 +6,7 @@ This adapter is the UCKK-specific edge of the Kristal publication flow. It belon
 
 - Kristal defines the canonical knowledge artifact and release semantics.
 - The kOA Mediatheque may own the immutable publication bundle bytes and expose them through an opaque `ArtifactRef` locator.
-- Da'at is the IK participant that admits/orchestrates the Kristal boundary and emits `kristal.publication.request`.
+- DaaT is the IK participant that admits/orchestrates the Kristal boundary and emits `kristal.publication.request`.
 - UCKK owns its local publication object and returns an IK Receipt / publication event.
 - IK transports the command, artifact reference and receipts. IK is never the artifact store or canonical Kristal authority.
 

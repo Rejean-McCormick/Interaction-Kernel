@@ -2,7 +2,7 @@
   "id": "kristal.build.request",
   "version": "1.0.0",
   "class": "command",
-  "description": "Request Da’at to compile/build Kristal artifacts from pinned exports/artifact references.",
+  "description": "Legacy request for DaaT-mediated mapping into the pinned Kristal build interface.",
   "source_systems": [
     "konnaxion",
     "orgo"

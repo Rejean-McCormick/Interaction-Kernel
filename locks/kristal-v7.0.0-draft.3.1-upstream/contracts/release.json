@@ -1,0 +1,16 @@
+{
+  "format": "kristal.release/v2",
+  "name": "Kristal",
+  "version": "7.0.0-draft.3.1",
+  "status": "draft",
+  "canonical_spec": "spec/v7/01-core-spec/kristal-v7-core-spec.md",
+  "portable_contract": {
+    "artifact_type": "kristal_state",
+    "schema_version": "6.0",
+    "schema": "schemas/v6/kristal-state.schema.json"
+  },
+  "v7_schema_root": "schemas/v7",
+  "v7_tck_root": "tck/v7/vectors",
+  "reference_implementation": "reference/js",
+  "external_diagnostic_repo": "kristal-diag"
+}

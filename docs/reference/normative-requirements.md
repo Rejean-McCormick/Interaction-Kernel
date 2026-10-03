@@ -1,11 +1,15 @@
 # Normative requirements
 
 - **IK-ARCH-001 MUST NOT** force Konnaxion↔Orgo through Kristal unless a Profile explicitly gates on Kristal.
-- **IK-ARCH-002 MUST** use Da’at as baseline IK↔Kristal ACL.
+- **IK-ARCH-002 MUST** use DaaT (`daat`) as the baseline IK↔Kristal anti-corruption/admission boundary.
 - **IK-ARCH-003 MUST** preserve participant-owned authoritative state.
 - **IK-ARCH-004 MUST NOT** use IK as an operational database, artifact store or distributed transaction coordinator.
 - **IK-ARCH-005 MUST NOT** require direct cross-system database writes or a distributed commit spanning participant-owned databases.
 - **IK-ARCH-006 MUST** commit a publisher-owned fact before emitting an Event that claims that fact is committed.
+- **IK-ARCH-007 MUST NOT** make DaaT the authority for source acquisition, artifact storage, general corpus normalization, or Kristall semantic identity.
+- **IK-KRISTAL-001 MUST** preserve `kristal_state/6.0` as the active portable build/artifact contract unless a new Profile version explicitly changes that contract.
+- **IK-KRISTAL-002 MUST** treat Kristal v7/Kristall semantics as additive above v6 and MUST NOT silently reinterpret existing v6 Profiles as v7 meta-artifact Profiles.
+- **IK-KRISTAL-003 MUST NOT** mint or reinterpret KQ/KP/KA/KS identity inside DaaT.
 - **IK-ENV-001 MUST** resolve durable Command/Query to a concrete receiver.
 - **IK-ART-001 MUST NOT** interpret ArtifactRef as ownership/authority/validation transfer.
 - **IK-ART-002 MUST** preserve source ownership of ExportManifest snapshots/revisions.
@@ -20,4 +24,4 @@
 - **IK-UCKK-001 MUST** treat UCKK publication as a projection; UCKK publication MUST NOT transfer canonical Kristal ownership.
 - **IK-UCKK-002 MUST** carry Kristal publication bundles by immutable ArtifactRef with SHA-256 integrity; IK MUST NOT become the publication artifact store.
 - **IK-UCKK-003 MUST** preserve supersession/revocation provenance rather than rewriting canonical Kristal history.
-- **IK-UCKK-004 MUST** route the reference Kristal publication flow through Da’at as the Kristal IK boundary participant.
+- **IK-UCKK-004 MUST** route the reference Kristal publication flow through DaaT as the Kristal IK boundary participant.
