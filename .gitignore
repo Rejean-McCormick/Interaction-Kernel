@@ -37,3 +37,16 @@ Thumbs.db
 
 # Local helper, not part of the product
 GitSink.bat
+
+# Additional Python/build/local artifacts
+venv/
+.pytest-tmp/
+.coverage.*
+build/
+dist/
+*.egg-info/
+*.temp
+*.bak.*
+*.swo
+*~
+Desktop.ini

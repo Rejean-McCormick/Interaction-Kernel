@@ -3,9 +3,14 @@
   "version": "2.0.0-dev.2",
   "entries": [
     {
+      "path": ".github/dependabot.yml",
+      "sha256": "3e251b793a4e1ee24cefa5a03a0109ce0927cc73efb31c56e856efe1396937a1",
+      "bytes": 595
+    },
+    {
       "path": ".github/workflows/ci.yml",
-      "sha256": "6728e9b986ad9e2a6954dceaf39a7e5f1286c13067eca42b3b9458d72cb4c9c3",
-      "bytes": 430
+      "sha256": "d425311020d5e067df0605a4a99fea412c52fc75571827071ab8a583b41e4a3b",
+      "bytes": 848
     },
     {
       "path": ".gitignore",
@@ -16,6 +21,41 @@
       "path": ".smartignore",
       "sha256": "3d592e9d43f424632127375764fef2d31ceacc161e090ee6986b273e560e1db1",
       "bytes": 239
+    },
+    {
+      "path": "CHANGELOG.md",
+      "sha256": "1cb7132edf229b3367fc368b9e6efb1b9d0321669493a680af32f5f8c2c2bdfe",
+      "bytes": 3444
+    },
+    {
+      "path": "CONTRIBUTING.md",
+      "sha256": "0a14e934c277f11aecfae06e87e58d64749f2b04f2e53ccab2151a90e19dd8c4",
+      "bytes": 486
+    },
+    {
+      "path": "README.md",
+      "sha256": "be57ca888a51ed555f357a3a2aabf7c11d74e57e447342d628ab69be070f9039",
+      "bytes": 3733
+    },
+    {
+      "path": "SNAPSHOT_INDEX.txt",
+      "sha256": "bd99977b242f560cd636148857db48467409a8e9e8bd22cbf1adbeb0e150cd8b",
+      "bytes": 6379
+    },
+    {
+      "path": "VALIDATION.md",
+      "sha256": "2ebcd2cac8c66b3f48f067dd85564b14a27a6f41c70d167b3f8650d496d6f65c",
+      "bytes": 2900
+    },
+    {
+      "path": "VERSION",
+      "sha256": "d0828b6aef0f969bb9f8a5b40f5e22e9fe7bd552d862799929a9330ffea975f4",
+      "bytes": 12
+    },
+    {
+      "path": "adapters/daat/README.md",
+      "sha256": "bc7e2e84bbec5bdd7b16023d2b4c0e8edf1b48abd82148323d37129bbcd63947",
+      "bytes": 1124
     },
     {
       "path": "adapters/daat/build_mapping.py",
@@ -33,19 +73,9 @@
       "bytes": 1661
     },
     {
-      "path": "adapters/daat/README.md",
-      "sha256": "bc7e2e84bbec5bdd7b16023d2b4c0e8edf1b48abd82148323d37129bbcd63947",
-      "bytes": 1124
-    },
-    {
       "path": "adapters/koa-linux/runtime_pack_activation.py",
       "sha256": "3743d9568b5fa32b29676811743d606c265963720b9b2532b1c972e7f4075f8f",
       "bytes": 796
-    },
-    {
-      "path": "adapters/konnaxion-python/konnaxion_ik_adapter.py",
-      "sha256": "896d00b9772db4b9b2b4006ea57e4034f550c587ca0df6cd7c7de17ac540ef92",
-      "bytes": 2738
     },
     {
       "path": "adapters/konnaxion-python/README.md",
@@ -53,9 +83,9 @@
       "bytes": 431
     },
     {
-      "path": "adapters/orgo-typescript/orgo-ik-adapter.ts",
-      "sha256": "40b109209839b0ac124775406c01bd046068c4cc7214bcf624ac3e4b99846855",
-      "bytes": 1892
+      "path": "adapters/konnaxion-python/konnaxion_ik_adapter.py",
+      "sha256": "896d00b9772db4b9b2b4006ea57e4034f550c587ca0df6cd7c7de17ac540ef92",
+      "bytes": 2738
     },
     {
       "path": "adapters/orgo-typescript/README.md",
@@ -63,9 +93,9 @@
       "bytes": 181
     },
     {
-      "path": "adapters/uckk/kristal_publication_adapter.py",
-      "sha256": "8428bc878144850384f52896ecae50c534aa9eaa0cb8d0fc39f969c2186a74f9",
-      "bytes": 8395
+      "path": "adapters/orgo-typescript/orgo-ik-adapter.ts",
+      "sha256": "40b109209839b0ac124775406c01bd046068c4cc7214bcf624ac3e4b99846855",
+      "bytes": 1892
     },
     {
       "path": "adapters/uckk/README.md",
@@ -73,9 +103,9 @@
       "bytes": 1564
     },
     {
-      "path": "CHANGELOG.md",
-      "sha256": "1cb7132edf229b3367fc368b9e6efb1b9d0321669493a680af32f5f8c2c2bdfe",
-      "bytes": 3444
+      "path": "adapters/uckk/kristal_publication_adapter.py",
+      "sha256": "8428bc878144850384f52896ecae50c534aa9eaa0cb8d0fc39f969c2186a74f9",
+      "bytes": 8395
     },
     {
       "path": "contracts/capabilities/reference-capabilities.json",
@@ -263,9 +293,9 @@
       "bytes": 2947
     },
     {
-      "path": "CONTRIBUTING.md",
-      "sha256": "0a14e934c277f11aecfae06e87e58d64749f2b04f2e53ccab2151a90e19dd8c4",
-      "bytes": 486
+      "path": "docs/README.md",
+      "sha256": "949055ff83fd52853ad5adb5163d1e82ae88d8216dee4d09006f7eea875bc46e",
+      "bytes": 1083
     },
     {
       "path": "docs/adrs/ADR-IK-01-runtime-pack-activation-owner.md",
@@ -348,11 +378,6 @@
       "bytes": 1473
     },
     {
-      "path": "docs/README.md",
-      "sha256": "949055ff83fd52853ad5adb5163d1e82ae88d8216dee4d09006f7eea875bc46e",
-      "bytes": 1083
-    },
-    {
       "path": "docs/reference/normative-requirements.md",
       "sha256": "430e9f87b0fae31498ddcfe7775642291d3b37c16cc9e8b5428657d4967953ca",
       "bytes": 2675
@@ -388,6 +413,11 @@
       "bytes": 1014
     },
     {
+      "path": "locks/kristal-v5.0.0-rc.1-upstream/VERSION",
+      "sha256": "8e12405d95c499225268ffa7ca2680478b7df1ad11421af40bcf2b43d435c4bd",
+      "bytes": 11
+    },
+    {
       "path": "locks/kristal-v5.0.0-rc.1-upstream/contract-set.manifest.json",
       "sha256": "47a8aba1a0bac41887b50efe7188de6bd6ca3012567294619d3385ba6b9a30d3",
       "bytes": 1805
@@ -403,14 +433,14 @@
       "bytes": 3319
     },
     {
-      "path": "locks/kristal-v5.0.0-rc.1-upstream/VERSION",
-      "sha256": "8e12405d95c499225268ffa7ca2680478b7df1ad11421af40bcf2b43d435c4bd",
-      "bytes": 11
-    },
-    {
       "path": "locks/kristal-v5.0.0-rc.1.lock.json",
       "sha256": "2e56c0b2e4aae825817220a8d8160cfe5838d755dfcac6fd605f2b047766910d",
       "bytes": 312
+    },
+    {
+      "path": "locks/kristal-v6.0.0-upstream/VERSION",
+      "sha256": "54ef76332b31df830699e9d4138396885ab72bae260a034a81ff02bf32d8e90a",
+      "bytes": 6
     },
     {
       "path": "locks/kristal-v6.0.0-upstream/manifest.sha256.json",
@@ -428,14 +458,14 @@
       "bytes": 27793
     },
     {
-      "path": "locks/kristal-v6.0.0-upstream/VERSION",
-      "sha256": "54ef76332b31df830699e9d4138396885ab72bae260a034a81ff02bf32d8e90a",
-      "bytes": 6
-    },
-    {
       "path": "locks/kristal-v6.0.0.lock.json",
       "sha256": "da0c55ba7e49ded0f8dd0892be85bcd23bc040e1386b0b7395c3e1c53b92c368",
       "bytes": 625
+    },
+    {
+      "path": "locks/kristal-v7.0.0-draft.3.1-upstream/VERSION",
+      "sha256": "76b776678bb0b6296834b1a3d1d55335a6101d8042909dabc4c09d8fd2eebc92",
+      "bytes": 16
     },
     {
       "path": "locks/kristal-v7.0.0-draft.3.1-upstream/contracts/contract-set.json",
@@ -468,19 +498,9 @@
       "bytes": 3365
     },
     {
-      "path": "locks/kristal-v7.0.0-draft.3.1-upstream/VERSION",
-      "sha256": "76b776678bb0b6296834b1a3d1d55335a6101d8042909dabc4c09d8fd2eebc92",
-      "bytes": 16
-    },
-    {
       "path": "locks/kristal-v7.0.0-draft.3.1.lock.json",
       "sha256": "74aaa8855689b9372d8225970bcc2392e541b8fb8335dc71bcccdf46cbc3e4db",
       "bytes": 1024
-    },
-    {
-      "path": "README.md",
-      "sha256": "be57ca888a51ed555f357a3a2aabf7c11d74e57e447342d628ab69be070f9039",
-      "bytes": 3733
     },
     {
       "path": "runtime/python/pyproject.toml",
@@ -564,8 +584,8 @@
     },
     {
       "path": "runtime/typescript/package.json",
-      "sha256": "84d204a7678543027b1382f772cfac086bae4cb05a1632b1f127bcc3c8090ee5",
-      "bytes": 328
+      "sha256": "a0cc81f3bd192e3a24eda125345266c846ab8c4d9f5e705e806f149ac2992360",
+      "bytes": 503
     },
     {
       "path": "runtime/typescript/src/admission.ts",
@@ -619,13 +639,13 @@
     },
     {
       "path": "scripts/test_all.ps1",
-      "sha256": "40616dc758db91862ce5c3ef2c412604d8bffdeb922f6923023dc9a698edf22e",
-      "bytes": 891
+      "sha256": "35fe1839b4bfdc79cb095d906ae28c4270bf2eadba6fe56ae5c418d6084616a7",
+      "bytes": 757
     },
     {
       "path": "scripts/test_all.sh",
-      "sha256": "af50835f840358358e1fc892fab20563deae1103d7f48834b4a7bc3897c537cb",
-      "bytes": 880
+      "sha256": "4b0306019aa1d6f64efd32d6c00310b3ffc758cdc314c9562e5dbda227e50d4f",
+      "bytes": 749
     },
     {
       "path": "scripts/test_konnaxion_legacy_compat.py",
@@ -648,11 +668,6 @@
       "bytes": 1393
     },
     {
-      "path": "SNAPSHOT_INDEX.txt",
-      "sha256": "bd99977b242f560cd636148857db48467409a8e9e8bd22cbf1adbeb0e150cd8b",
-      "bytes": 6379
-    },
-    {
       "path": "tck/fingerprint/cases.unresolved.json",
       "sha256": "d7762e39f7f6a444864041cfa37de368d2e794882c044b4db7fa9398eab3f51e",
       "bytes": 4165
@@ -661,11 +676,6 @@
       "path": "tck/fingerprint/vectors.json",
       "sha256": "42607e57260fc36c0115c6f6fa88cc79ce0d542c1764527b4b027fd0fec96355",
       "bytes": 7628
-    },
-    {
-      "path": "tck/jcs/expected-hashes.txt",
-      "sha256": "0ddc56c704138a5124e90ee33dfb785139fc6e905fddf1f68ce98e8b09b563fd",
-      "bytes": 760
     },
     {
       "path": "tck/jcs/README.md",
@@ -678,19 +688,14 @@
       "bytes": 235
     },
     {
+      "path": "tck/jcs/expected-hashes.txt",
+      "sha256": "0ddc56c704138a5124e90ee33dfb785139fc6e905fddf1f68ce98e8b09b563fd",
+      "bytes": 760
+    },
+    {
       "path": "tck/jcs/vectors.json",
       "sha256": "cb3a17a90c75b256de1af65e3990a86421d97dcafd2ac936fe83909d4328cb99",
       "bytes": 11145
-    },
-    {
-      "path": "VALIDATION.md",
-      "sha256": "2ebcd2cac8c66b3f48f067dd85564b14a27a6f41c70d167b3f8650d496d6f65c",
-      "bytes": 2900
-    },
-    {
-      "path": "VERSION",
-      "sha256": "d0828b6aef0f969bb9f8a5b40f5e22e9fe7bd552d862799929a9330ffea975f4",
-      "bytes": 12
     }
   ]
 }

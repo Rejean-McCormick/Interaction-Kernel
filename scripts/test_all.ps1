@@ -14,7 +14,7 @@ python -m unittest discover -s runtime/python/tests -v
 Push-Location runtime/typescript
 npm run build
 npm test
+npm run typecheck:adapter
 Pop-Location
-tsc --noEmit --strict --target ES2023 --module NodeNext --moduleResolution NodeNext adapters/orgo-typescript/orgo-ik-adapter.ts runtime/typescript/src/types.ts
 python scripts/check_links.py
 Write-Host "Interaction Kernel validation: PASS"
