@@ -1,5 +1,6 @@
 from __future__ import annotations
 import json, pathlib, sys
+from verify_tandem_contract_lock import verify as verify_tandem_contract_lock
 from jsonschema import Draft202012Validator
 ROOT=pathlib.Path(__file__).resolve().parents[1]
 errors=[]
@@ -14,6 +15,10 @@ for path in sorted((ROOT/'contracts/profiles').glob('*/*/*/profile.json')):
         payload=path.parent/value['payload_schema']
         Draft202012Validator.check_schema(json.loads(payload.read_text(encoding='utf-8')))
     except Exception as e: errors.append(f'{path}: {e}')
+try:
+    verify_tandem_contract_lock(ROOT)
+except (ValueError, KeyError, TypeError, OSError) as exc:
+    errors.append(f"tandem adopted lock: {exc}")
 lock=json.loads((ROOT/'locks/kristal-v6.0.0.lock.json').read_text())
 if lock.get('format')!='kristal.consumer-lock/v2': errors.append('Kristal lock format mismatch')
 if lock.get('version')!='6.0.0': errors.append('Kristal version mismatch')

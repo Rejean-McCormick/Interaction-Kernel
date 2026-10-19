@@ -1,0 +1,72 @@
+{
+  "format": "ik.tandem-tour-update/1",
+  "description": "Konnaxion-Orgo contract pin + active-profile conformance; no live interactions",
+  "source": "interaction_kernel_Code_snapshot.zip 2026-10-18 21:28:21",
+  "files": [
+    {
+      "path": "README.md",
+      "original_sha256": "be57ca888a51ed555f357a3a2aabf7c11d74e57e447342d628ab69be070f9039",
+      "updated_sha256": "aaf4b0402f060e0e7ef894398e6c79132a73f8d9194bbec6c5f565677fad5793"
+    },
+    {
+      "path": "VALIDATION.md",
+      "original_sha256": "2ebcd2cac8c66b3f48f067dd85564b14a27a6f41c70d167b3f8650d496d6f65c",
+      "updated_sha256": "d30ae6a35dcf6e9d372a68170264d1031fd426a2fb27783bfc10b272f245d626"
+    },
+    {
+      "path": "contracts/locks/konnaxion-orgo-adopted-v1.lock.json",
+      "original_sha256": null,
+      "updated_sha256": "cc391cfc5494f043fdde4fcf5c309d3df9d8ad0c6d6589ba713fd7cbe41027db"
+    },
+    {
+      "path": "docs/conformance.md",
+      "original_sha256": "7398e1ede405d82ac0b870af701eddb7b61d4ce506e64239242cf59f0ae8e334",
+      "updated_sha256": "2408ee0c1d89b6ba2399f862bdc343f6710e76ff41846c460866d70e5027c775"
+    },
+    {
+      "path": "docs/tandem-konnaxion-orgo-conformance.md",
+      "original_sha256": null,
+      "updated_sha256": "8b847a3f483a371398e6278ef660f87544be97a4143b58ee021b31f8972163d1"
+    },
+    {
+      "path": "runtime/python/src/interaction_kernel/profile_registry.py",
+      "original_sha256": "07d96e5967138cd3ed67747d1613f3cf1f3ebede6b6633e22a6274a449daba1d",
+      "updated_sha256": "a05b0243b87084dbeebfa72a0958c51b9d9da7101c81f84a2796f77452586fcb"
+    },
+    {
+      "path": "runtime/python/tests/test_tandem_active_profiles.py",
+      "original_sha256": null,
+      "updated_sha256": "81fe55ad23b7eb4c5393a7eeae65f881ced837147a31e16f0ddac5f133bf413d"
+    },
+    {
+      "path": "runtime/typescript/test/run-tests.mjs",
+      "original_sha256": "e70375d41767263006399ed3726a178482bc29cc2edba7299dcee8f053c10f32",
+      "updated_sha256": "dd536bf934ec096d346e7858fd6f0e6b21939df35869f27a5b0463f5bc70634e"
+    },
+    {
+      "path": "runtime/typescript/test/tandem-contracts.mjs",
+      "original_sha256": null,
+      "updated_sha256": "eed2bf9c653e7a6a62c96008c411fdf12846f7e1171c72d43c59dd2500d41c26"
+    },
+    {
+      "path": "scripts/test_all.ps1",
+      "original_sha256": "35fe1839b4bfdc79cb095d906ae28c4270bf2eadba6fe56ae5c418d6084616a7",
+      "updated_sha256": "54633f46547dcb2f9877950a59bd4f9ec117e048845edd9030192da98c184e17"
+    },
+    {
+      "path": "scripts/test_all.sh",
+      "original_sha256": "4b0306019aa1d6f64efd32d6c00310b3ffc758cdc314c9562e5dbda227e50d4f",
+      "updated_sha256": "efdf4188f8f293a7f630d63de01240b590e47e29a8e8d42613ead93ca74e8b48"
+    },
+    {
+      "path": "scripts/validate_repo.py",
+      "original_sha256": "f466fbdc56d4445d7112e700f60ee6a279a29ba9609fd3fe36d016f017b56533",
+      "updated_sha256": "c3dc7904667c1bbd62fa79c6556b936b86c85e0eff4ec93a55c0d5b3d08c3048"
+    },
+    {
+      "path": "scripts/verify_tandem_contract_lock.py",
+      "original_sha256": null,
+      "updated_sha256": "0d6b82260163b03eb135d907024fd27f161221b7801ed26ce113018bf03a5913"
+    }
+  ]
+}

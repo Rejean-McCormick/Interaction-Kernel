@@ -21,4 +21,6 @@ assert.equal((await pipeline.admit(admitted,profile,{})).replay,true);
 const divergent=structuredClone(admitted); divergent.data.decision_revision='rev-4';
 await assert.rejects(()=>pipeline.admit(divergent,profile,{}),e=>e.code==='IK_IDEMPOTENCY_CONFLICT');
 
+await import('./tandem-contracts.mjs');
+
 console.log(`PASS JCS=${jcs.vectors.length} fingerprint=${fp.vectors.length} admission=3`);

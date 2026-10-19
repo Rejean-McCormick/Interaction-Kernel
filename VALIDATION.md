@@ -44,3 +44,7 @@ DaaT (`daat`) is the IK↔Kristal anti-corruption/admission and explicit contrac
 Kristal v6 `record_role` and `actionability` enrich artifact semantics only. `actionability.mode = automatic` does not authorize a cross-system mutation; execution remains subject to the receiving owner's explicit contract/Profile, identity/authority check, admission policy and owner-local state transition.
 
 UCKK publication likewise creates only a participant-local projection. The canonical Kristal/Kristall knowledge and publication bundle remain owned upstream; a successful UCKK Receipt proves the UCKK-local operation, not a transfer of authority.
+
+## Local Tandem tour 4/8 gate (2026-10-19)
+
+The adopted Konnaxion–Orgo Profile versions were not modified. A new digest lock covers six existing contract files; active Profile registration is tied to the canonical index. Offline tests must pass in both Python and TypeScript. These local checks do not substitute for identity, tenant, Orgo outbox or live E2E testing.

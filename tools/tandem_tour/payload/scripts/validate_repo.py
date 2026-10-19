@@ -1,0 +1,33 @@
+from __future__ import annotations
+import json, pathlib, sys
+from verify_tandem_contract_lock import verify as verify_tandem_contract_lock
+from jsonschema import Draft202012Validator
+ROOT=pathlib.Path(__file__).resolve().parents[1]
+errors=[]
+for path in sorted((ROOT/'contracts/schemas').glob('*.json')):
+    try: Draft202012Validator.check_schema(json.loads(path.read_text(encoding='utf-8')))
+    except Exception as e: errors.append(f'{path}: {e}')
+for path in sorted((ROOT/'contracts/profiles').glob('*/*/*/profile.json')):
+    try:
+        value=json.loads(path.read_text(encoding='utf-8'))
+        schema=json.loads((ROOT/'contracts/schemas/profile.schema.json').read_text(encoding='utf-8'))
+        Draft202012Validator(schema).validate(value)
+        payload=path.parent/value['payload_schema']
+        Draft202012Validator.check_schema(json.loads(payload.read_text(encoding='utf-8')))
+    except Exception as e: errors.append(f'{path}: {e}')
+try:
+    verify_tandem_contract_lock(ROOT)
+except (ValueError, KeyError, TypeError, OSError) as exc:
+    errors.append(f"tandem adopted lock: {exc}")
+lock=json.loads((ROOT/'locks/kristal-v6.0.0.lock.json').read_text())
+if lock.get('format')!='kristal.consumer-lock/v2': errors.append('Kristal lock format mismatch')
+if lock.get('version')!='6.0.0': errors.append('Kristal version mismatch')
+if lock.get('canonicalization_profile')!='kristal.v6:jcs-rfc8785': errors.append('Kristal canonicalization profile mismatch')
+v7=json.loads((ROOT/'locks/kristal-v7.0.0-draft.3.1.lock.json').read_text())
+if v7.get('format')!='interaction-kernel.kristal-baseline-lock/v1': errors.append('Kristal v7 baseline lock format mismatch')
+if v7.get('version')!='7.0.0-draft.3.1': errors.append('Kristal v7 baseline version mismatch')
+portable=v7.get('portable_contract', {})
+if portable.get('artifact_type')!='kristal_state' or portable.get('schema_version')!='6.0': errors.append('Kristal v7 portable compatibility mismatch')
+if errors:
+    print('\n'.join(errors)); sys.exit(1)
+print('repository contracts: PASS')

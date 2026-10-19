@@ -35,6 +35,34 @@ class ProfileRegistry:
     @classmethod
     def from_contracts(cls, contracts_root: str | Path) -> "ProfileRegistry":
         registry = cls()
-        for p in sorted(Path(contracts_root).glob("profiles/*/*/*/profile.json")):
-            registry.register_directory(p.parent)
+        contracts = Path(contracts_root)
+        index_path = contracts / "profiles" / "index.json"
+        index = json.loads(index_path.read_text(encoding="utf-8"))
+        if index.get("format") != "ik.profile-index/1" or not isinstance(index.get("profiles"), list):
+            raise IKError("IK_PROFILE_CONFLICT", "invalid active profile index")
+
+        # The index is authoritative. Versioned directories not listed here are
+        # retained as historical contracts but MUST NOT be automatically admitted.
+        candidates: dict[tuple[str, str], Path] = {}
+        for p in sorted((contracts / "profiles").glob("*/*/*/profile.json")):
+            descriptor = json.loads(p.read_text(encoding="utf-8"))
+            key = (descriptor["id"], descriptor["version"])
+            if key in candidates:
+                raise IKError("IK_PROFILE_CONFLICT", f"duplicate profile directory: {key}")
+            candidates[key] = p.parent
+
+        seen: set[tuple[str, str]] = set()
+        for entry in index["profiles"]:
+            if not isinstance(entry, dict) or not all(isinstance(entry.get(k), str) for k in ("id", "version", "class")):
+                raise IKError("IK_PROFILE_CONFLICT", "invalid indexed profile entry")
+            key = (entry["id"], entry["version"])
+            if key in seen:
+                raise IKError("IK_PROFILE_CONFLICT", f"duplicate active profile: {key}")
+            seen.add(key)
+            root = candidates.get(key)
+            if root is None:
+                raise IKError("IK_UNKNOWN_PROFILE", f"indexed profile missing from contracts: {key}")
+            registered = registry.register_directory(root)
+            if registered.descriptor["class"] != entry["class"]:
+                raise IKError("IK_PROFILE_CONFLICT", f"class mismatch in active profile index: {key}")
         return registry

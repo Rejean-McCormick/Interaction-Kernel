@@ -31,6 +31,10 @@ Konnaxion  <----------- IK ----------->  Orgo
 
 Konnaxion↔Orgo remains direct. Kristal is not a mandatory relay. DaaT is the narrow IK anti-corruption/admission boundary in front of Kristal/Kristall; the stable machine identifier is `daat`. DaaT performs explicit contract mapping, not source acquisition, general corpus normalization, artifact storage, or Kristall semantic-identity authoring. UCKK publication is an optional participant integration: DaaT sends immutable Kristal publication references through IK, while the artifact bytes may remain owned by the kOA Mediatheque.
 
+## Tandem Konnaxion–Orgo adopted contract gate
+
+The three adopted Konnaxion–Orgo Profile descriptors and payload schemas are locked by SHA-256, and the Python active Profile registry now follows `contracts/profiles/index.json` (no historical Kristal v1 auto-registration). Run `python scripts/verify_tandem_contract_lock.py`; see [`docs/tandem-konnaxion-orgo-conformance.md`](docs/tandem-konnaxion-orgo-conformance.md). This does not imply live service qualification.
+
 ## Quick checks
 
 ### Python

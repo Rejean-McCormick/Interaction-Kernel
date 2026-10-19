@@ -1,0 +1,32 @@
+{
+  "format": "ik.adopted-profile-lock/1",
+  "scope": "konnaxion-orgo",
+  "specversion": "ik/1.1",
+  "explanation": "SHA-256 inventory of adopted Konnaxion↔Orgo contract files. Not a signature or deployment admission.",
+  "files": [
+    {
+      "path": "contracts/profiles/konnaxion-orgo/governance.decision.execute/1.0.0/profile.json",
+      "sha256": "sha256:6115cdb41434b3507e891e91b04e8f78c2f2fcdb2364122c9972f03a696ef463"
+    },
+    {
+      "path": "contracts/profiles/konnaxion-orgo/governance.decision.execute/1.0.0/payload.schema.json",
+      "sha256": "sha256:b3a5464b3aa8542ba1cf11957f9519272d92c36e5fd4fa66b0f1d78a7441e685"
+    },
+    {
+      "path": "contracts/profiles/konnaxion-orgo/accountability.impact.publish/1.0.0/profile.json",
+      "sha256": "sha256:c6d63b950bed916fe7b720516c298bb17f58b700a1aff1bc6dd8359c537d06d1"
+    },
+    {
+      "path": "contracts/profiles/konnaxion-orgo/accountability.impact.publish/1.0.0/payload.schema.json",
+      "sha256": "sha256:7dacb9e343e50214883b043e27face6162552c6a5720d0025555da34b9c4fbdd"
+    },
+    {
+      "path": "contracts/profiles/konnaxion-orgo/operational.reconsideration.recommended/1.0.0/profile.json",
+      "sha256": "sha256:e20a37ff621ae0ae41be28c7e1d89aee5e64a774f2fab4cc5ce9330e84791c46"
+    },
+    {
+      "path": "contracts/profiles/konnaxion-orgo/operational.reconsideration.recommended/1.0.0/payload.schema.json",
+      "sha256": "sha256:590e592d62e08a53e4de8700aca23cd72351a649c53f94c321768ff3c7693ae8"
+    }
+  ]
+}
