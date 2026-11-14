@@ -1,0 +1,22 @@
+{
+  "schema": "koa.daat-owner-observation/0.1.0-local",
+  "subject": "DaAT 0.4.3 local review-handoff (not an owner-adopted profile)",
+  "repository": "interaction_kernel",
+  "role": "ik",
+  "authority": "IK admission and transport",
+  "evidence_status": "OBSERVED_SNAPSHOT",
+  "markers": [
+    "VERSION",
+    "docs/kristal-daat.md",
+    "docs/adrs/ADR-IK-07-daat-kristal-v7-boundary.md",
+    "contracts/schemas/envelope.schema.json",
+    "contracts/schemas/receipt.schema.json"
+  ],
+  "read_only": true,
+  "prototype_consumer_adopted": false,
+  "ik_ingress_approved": false,
+  "canonical_write_authorized": false,
+  "publication_authorized": false,
+  "boundary": "IK existing kristal.build.request/2.0.0 is portable v6 and is NOT DaAT 0.4.3 proposal ingress. Source acquisition must remain upstream and external to IK DaaT anti-corruption boundary.",
+  "acceptance_gate": "IK owner publishes and validates a new explicit profile only after adoption of receiving contract and admission/security requirements."
+}
