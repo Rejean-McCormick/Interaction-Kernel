@@ -77,4 +77,4 @@ docs/           technical documentation + ADRs
 - State/artifact boundary: each participant owns its mutable operational state; IK transports interactions and references; DaaT performs explicit versioned contract mapping into Kristal-native interfaces; no distributed cross-owner database transaction is required. DaaT does not own acquisition, corpus normalization, or Kristall semantic identity.
 - Kristal → UCKK publication: UCKK-specific mapping is an IK adapter; canonical Kristal ownership remains upstream, and the kOA Mediatheque may continue to own immutable publication bundle bytes.
 
-See [`docs/`](docs/README.md).
+See [`docs/`](../../../docs/README.md).
